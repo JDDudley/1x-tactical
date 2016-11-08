@@ -1,0 +1,104 @@
+body {
+    background-color: #666;
+    color: #e8e8e8 !important;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    /*text-align: center;*/
+    color: #e8e8e8 !important;
+    font-family: 'Black Ops One', sans-serif;
+    text-transform: uppercase;
+}
+.nav li {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+.full-height {
+    min-height: 100vh;
+    padding-top: 60px;
+}
+.section-top {
+    background-image: url('backgrounds/freedom.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+.tagline-2 {
+    line-height: 2em;
+    margin-top: 10vh;
+    color: tan !important;
+    text-shadow: 2px 2px 2px black;
+}
+.join-btn {
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+}
+.home-container {
+    background-image: url('backgrounds/cracked.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.section-header {
+    text-decoration: underline;
+    text-align: center;
+    color: tan !important;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.section-mindset {
+    background-color: rgba(0,0,0,0.25);
+    color: #e8e8e8;
+    text-align: justify;
+    font-size: 24px;
+    line-height: 2em;
+    text-align: center;
+}
+.section-membership {
+    background-color: rgba(0,0,0,0.25);
+}
+.signup-header {
+    color: tan !important;
+    padding: 0;
+    text-decoration: underline;
+}
+.signup-box {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+.section-benefits {
+    background-color: rgba(0,60,0,0.25);
+    font-size: 2rem;
+}
+.benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 2em;
+}
+.benefit-list > li {
+    padding-left: 1em;
+    padding-bottom: 20px;
+}
+.benefit-list > li:before {
+    content: "\002022";
+    color: red;
+    padding-right: 8px;
+}
+.section-armory {
+    background-color: rgba(0,60,0,0.25);
+    text-align: center;
+}
+.supplier-list {
+    background-color: white;
+    text-align: center;
+}
+.footer {
+    background-color: black;
+    color: #e8e8e8;
+    text-align: center;
+    padding: 12px;
+}

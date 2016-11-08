@@ -1,0 +1,19 @@
+{
+  "name": "1x-tactical",
+  "version": "1.0.0",
+  "description": "1X Tactical Landing Page",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "^7",
+    "npm": "^3"
+  },
+  "author": "JD Dudley",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
