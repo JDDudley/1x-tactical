@@ -21,14 +21,17 @@ $(function () {
       $(".navbar-toggle").trigger("click");
     }
   });
-  //join submit button
-  $('#submit-join').on('click', function () {
+  //join button
+  $('.join-btn').on('click', function () {
     console.log('submit-join clicked...');
-    $('.signup-box').slideUp();
+    $('.signup-box').load(joinPg);
+    $('#membership-btn-div').addClass('hidden');
+    $('.signup-box').removeClass('hidden');
     setTimeout(function(){
-      window.location = '#membership';
-      $('.signup-box').load(joinPg);
-      $('.signup-box').slideDown(200);
+      $('.signup-box').slideDown();
     },1000);
   });
+  //form submit button
+  function submitForm(){
+  }
 });
