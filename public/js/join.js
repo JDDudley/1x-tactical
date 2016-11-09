@@ -6,8 +6,8 @@ $(document).ready(function () {
         $('.brand').click();
         return false;
     });
-    function stripeResponseHandler(response) {
-        console.log(response);
+    function stripeResponseHandler(status, response) {
+        console.log(status, response);
     }
     // {
     //   id: "tok_u5dg20Gra", // Token identifier
