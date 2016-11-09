@@ -1,7 +1,7 @@
 {
   "name": "1x-tactical",
   "version": "1.0.0",
-  "description": "1X Tactical Landing Page",
+  "description": "1X Tactical",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,10 +10,16 @@
     "node": "^7",
     "npm": "^3"
   },
-  "author": "JD Dudley",
+  "author": "Jason Dudley, Michael Wolf Hoffman, Chad Rohrsir, Clint Madariaga, Nate",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "firebase": "^2.4.2",
+    "js-data": "^2.9.0",
+    "js-data-firebase": "^2.1.1",
+    "node-uuid": "^1.4.7",
+    "nodemon": "^1.11.0"
   }
 }
