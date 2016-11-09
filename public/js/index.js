@@ -14,6 +14,7 @@ $(document).ready(function () {
   });
 });
 $(function () {
+  const joinPg = 'components/join.html';
   //collapse mobile menu when item selected
   $('.nav a').on('click', function () {
     if ($('.navbar-toggle').css('display') != 'none') {
@@ -25,7 +26,8 @@ $(function () {
     console.log('submit-join clicked...');
     $('.signup-box').slideUp();
     setTimeout(function(){
-      $('.signup-box').html('<h1>HELLO, WORLD!</h1>');
+      window.location = '#membership';
+      $('.signup-box').load(joinPg);
       $('.signup-box').slideDown(200);
     },1000);
   });
