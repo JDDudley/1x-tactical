@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 60px;
 }
 .section-top {
-    background-image: url('backgrounds/freedom.jpg');
+    background-image: url('/backgrounds/freedom.jpg');
     background-size: cover;
     background-attachment: fixed;
     text-align: center;
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
 }
 .home-container {
-    background-image: url('backgrounds/cracked.jpg');
+    background-image: url('/backgrounds/cracked.jpg');
     background-attachment: fixed;
     background-size: cover;
 }

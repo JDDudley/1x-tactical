@@ -1,62 +1,108 @@
-<h4>User</h4>
-<form class="form-horizontal">
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">First Name</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="text" class="form-control" id="input-firstname" placeholder="Joe">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1X Tactical</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Oswald|Raleway" rel="stylesheet">
+    <!--custom-->
+    <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/components/join.css">
+    <!--mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body id="top">
+    <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="brand" href="/#top"><img src="/images/1x-logo.png"></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="sr-only">Toggle Navigation</span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="nav-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/#1x-mindset" id="nav-mindset">Mindset</a></li>
+                    <li><a href="/#member-benefits" id="nav-benefits">Benefits</a></li>
+                    <li><a href="/#membership" id="nav-membership">Membership</a></li>
+                    <li><a href="/#armory" id="nav-armory">Armory</a></li>
+                    <!--<li><a href="/#training" id="nav-training">Training</a></li>-->
+                    <!--<li><a href="/#news" id="nav-news">News</a></li>-->
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Last Name</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="text" class="form-control" id="input-lastname" placeholder="Smith">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Email</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="email" class="form-control" id="input-email" placeholder="Email">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Password</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="password" class="form-control" id="input-password" placeholder="Password">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Password (Again)</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="password" class="form-control" id="input-password2" placeholder="Re-Enter Password">
-        </div>
-    </div>
-    <h4>Billing Address</h4>
-    <!-- address-line1 input-->
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Address 1</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="text" class="form-control" id="input-address1" placeholder="Address line 1">
-        </div>
-    </div>
-    <!-- address-line2 input-->
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Address 2</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="text" class="form-control" id="input-address2" placeholder="Address line 2">
-        </div>
-    </div>
-    <!-- city input-->
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">City</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="text" class="form-control" id="input-city" placeholder="City">
-        </div>
-    </div>
-    <!-- region input-->
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">State</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <select id="input-state" class="form-control">
+    <div class="container-fluid home-container">
+        <div class="row section-top full-height" id="top">
+            <div class="col-xs-12 signup-box">
+                <!--start join form-->
+                <h4>User</h4>
+                <form class="form-horizontal" id="join-form">
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">First Name</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="input-firstname" placeholder="Joe">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Last Name</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="input-lastname" placeholder="Smith">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Email</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="email" class="form-control" id="input-email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Password</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="password" class="form-control" id="input-password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Password (Again)</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="password" class="form-control" id="input-password2" placeholder="Re-Enter Password">
+                        </div>
+                    </div>
+                    <h4>Billing Address</h4>
+                    <!-- address-line1 input-->
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Address 1</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="input-address1" placeholder="Address line 1">
+                        </div>
+                    </div>
+                    <!-- address-line2 input-->
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Address 2</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="input-address2" placeholder="Address line 2">
+                        </div>
+                    </div>
+                    <!-- city input-->
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">City</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="input-city" placeholder="City">
+                        </div>
+                    </div>
+                    <!-- region input-->
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">State</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <select id="input-state" class="form-control">
                         <option value="" selected="selected">(Select a State)</option>
                         <option value="N/A">Other</option>
                         <option value="AL">Alabama</option>
@@ -111,17 +157,17 @@
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
             </select>
-        </div>
-    </div>
-    <div class="form-group">
-    <!-- postal-code input-->
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Zip Code</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="text" class="form-control" id="input-zipcode" placeholder="Zip or Postal Code">
-        </div>
-    </div>
-    <!-- country select -->
-    <!--<div class="form-group">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- postal-code input-->
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Zip Code</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="input-zipcode" data-stripe="address_zip" placeholder="Zip or Postal Code">
+                        </div>
+                    </div>
+                    <!-- country select -->
+                    <!--<div class="form-group">
             <label class="col-xs-3 ">Country</label>
             <div class="col-xs-3 controls">
                 <select id="country" name="country" class="form-control">
@@ -369,24 +415,24 @@
             </select>
             </div>
         </div>-->
-    <!--Credit Card-->
-    <h4>Payment Information</h4>
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label" for="input-cardname">Name on Card</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="text" class="form-control" id="input-cardname" placeholder="Card Holder's Name">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label" for="input-cardnumber">Card Number</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="text" class="form-control" id="input-cardnumber" placeholder="Debit/Credit Card Number">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label" for="input-expirymonth">Expiration</label>
-        <div class="col-xs-4 col-sm-3 col-md-2">
-            <select class="form-control" id="input-expirymonth">
+                    <!--Credit Card-->
+                    <h4>Payment Information</h4>
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label" for="input-cardname">Name on Card</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="input-cardname" placeholder="Card Holder's Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Card Number</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="text" class="form-control" data-stripe="number" placeholder="Debit/Credit Card Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Expiration</label>
+                        <div class="col-xs-4 col-sm-3 col-md-2">
+                            <select class="form-control" data-stripe="exp_month">
                 <option>Month</option>
                 <option value="01">Jan (01)</option>
                 <option value="02">Feb (02)</option>
@@ -401,9 +447,9 @@
                 <option value="11">Nov (11)</option>
                 <option value="12">Dec (12)</option>
             </select>
-        </div>
-        <div class="col-xs-4 col-sm-3 col-md-2">
-            <select class="form-control" name="input-expiryyear" id="expiry-year">
+                        </div>
+                        <div class="col-xs-4 col-sm-3 col-md-2">
+                            <select class="form-control" data-stripe="exp_year">
                 <option>Year</option>
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
@@ -417,25 +463,49 @@
                 <option value="2025">2025</option>
                 <option value="2026">2026</option>
             </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label">Card CVC</label>
+                        <div class="col-xs-4 col-sm-3 col-md-2">
+                            <input type="text" class="form-control" data-stripe="cvc" placeholder="Security Code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 col-sm-3 col-md-4 control-label" for="input-coupon">Coupon Code</label>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="input-discount" placeholder="Coupon Code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-4 col-sm-3 col-md-4">&nbsp;
+                        </div>
+                        <div class="col-xs-8 col-sm-6 col-md-4">
+                            <button type="submit" class="btn btn-danger submit" id="submit-form" style="width: 75%;">Join 1X Tactical</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row footer">
+            <div class="col-xs-12">
+                &copy; 2016 X1 Tactical, LLC.
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label" for="input-cvv">Card CVV</label>
-        <div class="col-xs-4 col-sm-3 col-md-2">
-            <input type="text" class="form-control" id="input-cvv" placeholder="Security Code">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-xs-4 col-sm-3 col-md-4 control-label" for="input-coupon">Coupon Code</label>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <input type="text" class="form-control" id="input-discount" placeholder="Coupon Code">
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-xs-4 col-sm-3 col-md-4">&nbsp;
-        </div>
-        <div class="col-xs-8 col-sm-6 col-md-4">
-            <button type="button" class="btn btn-danger" id="submit-form" style="width: 75%;" onclick="submitForm();">Submit</button>
-        </div>
-    </div>
-</form>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <!--bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!--custom js-->
+    <script src="/js/join.js"></script>
+    <!--stripe-->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+        Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+    </script>
+</body>
+
+</html>

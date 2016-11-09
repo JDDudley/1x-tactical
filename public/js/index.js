@@ -22,16 +22,13 @@ $(function () {
     }
   });
   //join button
-  $('.join-btn').on('click', function () {
-    console.log('submit-join clicked...');
-    $('.signup-box').load(joinPg);
-    $('#membership-btn-div').addClass('hidden');
-    $('.signup-box').removeClass('hidden');
-    setTimeout(function(){
-      $('.signup-box').slideDown();
-    },1000);
-  });
-  //form submit button
-  function submitForm(){
-  }
+  // $('.join-btn').on('click', function () {
+  //   $('.signup-box').load(joinPg);
+  //   $('#membership-btn-div').addClass('hidden');
+  //   $('.signup-box').removeClass('hidden');
+  //   onJoinLoad('loadHandlers');
+  //   setTimeout(function(){
+  //     $('.signup-box').slideDown();
+  //   },1000);
+  // });
 });
