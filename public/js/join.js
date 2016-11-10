@@ -20,8 +20,10 @@ $(document).ready(function () {
             var memObj = makeMember(response);
             var token = response.id;
             joinForm.append($('<input type="hidden" name="stripeToken">').val(token));
-            $.post('http://1xtactical.com/api/membership', { "member": memObj });
-            joinForm.get(0).submit();
+            // $.post('http://1xtactical.com/api/membership', { "member": memObj });
+            // joinForm.get(0).submit();
+            console.log('About to call /api/payment/membership...');
+            $.post('/api/payment/membership', joinForm);
         }
     }
     function makeMember(response) {
