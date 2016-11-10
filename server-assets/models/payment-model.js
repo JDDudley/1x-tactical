@@ -10,15 +10,15 @@ function create(body, cb) {
         "source": token,
         "description": "1X Tactical Yearly Membership"
     }
-    console.log('Charge Object:' + chargeObj);
-    var charge = stripe.charges.create(chargeObj, function (err, charge) {
-        if (err && err.type == 'StripeCardError') {
-            return cb({ "error": "The card has been declined." });
+    console.log('Charge Object:',chargeObj);
+    stripe.charges.create(chargeObj, function (err, charge) {
+        if (err) {
+            return cb({ "error": "The card has been declined", "errorType":err });
         }
-        return cb({"message":"Successful.", "charge":charge});
+        return cb({ "message": "Successful.", "charge": charge });
     });
 };
 
-module.exports={
+module.exports = {
     create
 }
