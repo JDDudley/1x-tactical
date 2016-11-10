@@ -17,7 +17,7 @@ $(document).ready(function () {
         var memObj = {
             "firstName": $('#input-firstname').val(),
             "lastName": $('#input-lastname').val(),
-            "address1": $('#input-address').val(),
+            "address1": $('#input-address1').val(),
             "address2": $('#input-address2').val() || '',
             "city": $('#input-city').val(),
             "state": $('#input-state option:selected').text(),
