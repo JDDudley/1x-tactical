@@ -48,11 +48,15 @@
                 <!--signup form newsletter-->
                 <div class="hidden-xs col-sm-2 col-md-3 col-lg-4"></div>
                 <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
-                    <!--<div class="alert alert-success">
+                    <h2 id="newsletter-h">Stay Informed</h2>
+                    <div class="alert alert-success hidden" id="mailing-list-success">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <strong>Welcome!</strong><br>You have been successfully added to the mailing list. We will keep you informed of all new developments at 1X Tactical!
-                    </div>-->
-                    <h2 id="newsletter-h">Stay Informed</h2>
+                    </div>
+                    <div class="alert alert-danger hidden" id="mailing-list-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>No Valid Email Address</strong><br>Please enter a valid email address and try again!
+                    </div>
                     <form id="newsletter-signup">
                         <div class="input-group">
                             <input type="email" class="form-control" id="newsletter-email" placeholder="Enter your email address...">
@@ -349,7 +353,7 @@
         </div>
         <div class="row footer">
             <div class="col-xs-12">
-                &copy; 2016 1X Tactical, LLC.
+                &copy; 2016 1X Tactical.
             </div>
         </div>
     </div>

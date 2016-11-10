@@ -24,9 +24,20 @@ $(function () {
   //subscribe button
   $('#newsletter-submit').on('click',function(){
     var newEmail = $('#newsletter-email').val();
-    $.post('http://1xtactical.com/api/mailing-list', {"member":{"email": newEmail}});
-    $('#newsletter-signup')[0].reset();
+    var result = validateEmail(newEmail);
+    if (result){
+      $.post('http://1xtactical.com/api/mailing-list', {"member":{"email": newEmail}});
+      $('#newsletter-signup')[0].reset();
+      $('#mailing-list-success').removeClass('hidden');
+    } else {
+      $('#mailing-list-danger').removeClass('hidden');
+    }
   })
+  function validateEmail(email) 
+  {
+      var re = /\S+@\S+\.\S+/;
+      return re.test(email);
+  }
   //join button
   // $('.join-btn').on('click', function () {
   //   $('.signup-box').load(joinPg);
