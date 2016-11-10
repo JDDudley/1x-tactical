@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 .tagline-2 {
-    line-height: 2em;
+    line-height: 1.5em;
     margin-top: 10vh;
     color: tan !important;
     text-shadow: 2px 2px 2px black;
@@ -35,6 +35,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
     font-size: 2em;
     font-family: 'Oswald', sans-serif;
+}
+#newsletter-h {
+    margin-top: 10vh;
+    color: tan !important;
+    text-shadow: 2px 2px 2px black;
+    text-decoration: underline;
 }
 .home-container {
     background-image: url('/backgrounds/cracked.jpg');

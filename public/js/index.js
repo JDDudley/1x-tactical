@@ -21,6 +21,12 @@ $(function () {
       $(".navbar-toggle").trigger("click");
     }
   });
+  //subscribe button
+  $('#newsletter-submit').on('click',function(){
+    var newEmail = $('#newsletter-email').val();
+    $.post('/api/mailinglist', {"member":{"email": newEmail}});
+    $('#newsletter-signup')[0].reset();
+  })
   //join button
   // $('.join-btn').on('click', function () {
   //   $('.signup-box').load(joinPg);
