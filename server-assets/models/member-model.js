@@ -14,17 +14,22 @@ let Membership = DS.defineResource({
 function newMembership(member){
 return{
         id: member.id || uuid.v4(),
-        name: member.name,
-        address: member.address,
+        firstName: member.firstName,
+        lastName: member.lastName,
+        address1: member.address1,
+        address2: member.address2, 
         city:member.city,
         state:member.state,
-        country:member.country,
         zip:member.zip,
         phone:member.phone, 
         email: member.email,
         paid: false,
         dateJoined: Date.now(), 
-        dateExpired: Date.now() + 3.154e+10
+        dateExpired: Date.now() + 3.154e+10,
+        isMember: true,  
+        isAdmin: false,
+        onMailingList: true,
+        paymentInfo:[]
     }
 }
 
@@ -51,9 +56,16 @@ removeMember= function(memberId, cb){
   getById(memberId, function(member){
     if(memberId ==member.id){
     member.paid = false
+    member.isMember = false 
     }
     Membership.update(memberId, member).then(cb).catch(cb)
 })
+}
+
+paidMember = (member)=>{
+   if(member.paymentInfo!==[]){
+       member.paid=true;
+   }
 }
 
 module.exports={

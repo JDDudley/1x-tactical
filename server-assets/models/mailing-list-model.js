@@ -1,5 +1,5 @@
 
-let dataAdapter = require('../models/data-adapter'),
+let dataAdapter = require('../models/data-adapter'), 
   uuid = dataAdapter.uuid,
   DS = dataAdapter.DS,
   formatQuery = dataAdapter.formatQuery;
@@ -14,10 +14,8 @@ let MailingList = DS.defineResource({
 function newMember(member){
 return{
         id: member.id || uuid.v4(),
-        name: member.name,
         email: member.email,
-        onList: true
-           
+        onMailingList: true           
     }
 }
 

@@ -20,7 +20,7 @@ router.route('/:id?')
                 return next(member)
             }
              res.send(member)
-        })
+        }) 
     })
     .put(function (req, res, next) {
     MailingList.updateMember(req.params.id, req.body.member, function(member){
