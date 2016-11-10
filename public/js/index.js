@@ -24,7 +24,10 @@ $(function () {
   //subscribe button
   $('#newsletter-submit').on('click',function(){
     var newEmail = $('#newsletter-email').val();
-    $.post('/api/mailing-list', {"member":{"email": newEmail}}).then(function(data){console.log(data);}).catch(function(err){console.log(err)});
+    $.post('http://1xtactical.com/api/mailing-list', {"member":{"email": newEmail}});
+    console.log('initial post done...');
+    var newObj = JSON.stringify({'member':{'email':newEmail,'name':'stringified'}});
+    console.log('second post done...');
     $('#newsletter-signup')[0].reset();
   })
   //join button
