@@ -2,18 +2,19 @@ $(document).ready(function () {
     $('#submit-form').on('click',function(){
         var joinForm = $('#join-form');
         Stripe.card.createToken(joinForm, stripeResponseHandler);
-        joinForm[0].reset();
+        // joinForm[0].reset();
         $('.brand').click();
         return false;
     });
     function stripeResponseHandler(status, response) {
         console.log(status, response);
         if (status === 200) { //success
+            console.log('Good response, making member...');
             makeMember(response);
         }
     }
     function makeMember(response) {
-        var memObj = {"member":{
+        var memObj = {
             "firstName": $('#input-firstname').val(),
             "lastName": $('#input-lastname').val(),
             "address1": $('#input-address').val(),
@@ -24,8 +25,9 @@ $(document).ready(function () {
             "phone": $('#input-phone').val(),
             "email": $('#input-email').val(),
             "paymentInfo": response
-        }};
-        $.post('http://1xtactical.com/api/membership',memObj);
+        };
+        console.log(memObj);
+        $.post('http://1xtactical.com/api/membership',{"member":memObj});
     }
     // {
     //   id: "tok_u5dg20Gra", // Token identifier
