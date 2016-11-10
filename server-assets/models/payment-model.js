@@ -1,8 +1,5 @@
 let stripe = require("stripe")("sk_test_tlI06RUdE1tVOzucTg99mHne");
 
-// Get the credit card details submitted by the form
-var token = request.body.stripeToken; // Using Express
-
 function create(body) {
     var token = body.stripeToken;
     var charge = stripe.charges.create({
