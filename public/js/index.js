@@ -24,7 +24,7 @@ $(function () {
   //subscribe button
   $('#newsletter-submit').on('click',function(){
     var newEmail = $('#newsletter-email').val();
-    $.post('/api/mailinglist', {"member":{"email": newEmail}});
+    $.post('/api/mailing-list', {"member":{"email": newEmail}});
     $('#newsletter-signup')[0].reset();
   })
   //join button
