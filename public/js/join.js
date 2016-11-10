@@ -8,6 +8,24 @@ $(document).ready(function () {
     });
     function stripeResponseHandler(status, response) {
         console.log(status, response);
+        if (status === 200) { //success
+            makeMember(response);
+        }
+    }
+    function makeMember(response) {
+        var memObj = {"member":{
+            "firstName": $('#input-firstname').val(),
+            "lastName": $('#input-lastname').val(),
+            "address1": $('#input-address').val(),
+            "address2": $('#input-address2').val() || '',
+            "city": $('#input-city').val(),
+            "state": $('#input-state option:selected').text(),
+            "zip": $('#input-zipcode').val(),
+            "phone": $('#input-phone').val(),
+            "email": $('#input-email').val(),
+            "paymentInfo": response
+        }};
+        $.post('http://1xtactical.com/api/membership',memObj);
     }
     // {
     //   id: "tok_u5dg20Gra", // Token identifier

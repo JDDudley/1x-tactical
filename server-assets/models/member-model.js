@@ -23,13 +23,12 @@ return{
         zip:member.zip,
         phone:member.phone, 
         email: member.email,
-        paid: false,
         dateJoined: Date.now(), 
         dateExpired: Date.now() + 3.154e+10,
         isMember: true,  
         isAdmin: false,
         onMailingList: true,
-        paymentInfo:[]
+        paymentInfo:member.paymentInfo
     }
 }
 
@@ -60,12 +59,6 @@ removeMember= function(memberId, cb){
     }
     Membership.update(memberId, member).then(cb).catch(cb)
 })
-}
-
-paidMember = (member)=>{
-   if(member.paymentInfo!==[]){
-       member.paid=true;
-   }
 }
 
 module.exports={
