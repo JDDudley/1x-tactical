@@ -12,9 +12,9 @@ function create(req) {
         currency: "usd",
         source: token,
         description: "1X Tactical Yearly Membership"
-    }, function(err, charge) {
+    }, function (err, charge) {
         if (err && err.type == 'StripeCardError') {
-            return {"error": "The card has been declined."};
+            return { "error": "The card has been declined." };
         }
     });
 }
