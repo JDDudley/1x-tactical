@@ -44,8 +44,8 @@
             <div class="col-xs-12 signup-box">
                 <!--start join form-->
                 <h4>User Information</h4>
-                <!--<form class="form-horizontal" id="join-form" action="/api/payment/membership" method="POST">-->
-                <form class="form-horizontal" id="join-form">
+                <form class="form-horizontal" id="join-form" action="/api/payment/membership" method="POST">
+                <!--<form class="form-horizontal" id="join-form">-->
                     <div class="form-group" id="div-firstname">
                         <label class="col-xs-4 col-sm-3 col-md-4 control-label">First Name</label>
                         <div class="col-xs-8 col-sm-6 col-md-4">
@@ -183,7 +183,7 @@
                     <div class="form-group" id="div-cc">
                         <label class="col-xs-4 col-sm-3 col-md-4 control-label">Card Number</label>
                         <div class="col-xs-8 col-sm-6 col-md-4">
-                            <input type="text" class="form-control" maxlength="2" data-stripe="number" placeholder="Debit/Credit Card Number">
+                            <input type="text" class="form-control" data-stripe="number" placeholder="Debit/Credit Card Number">
                         </div>
                     </div>
                     <div class="form-group" id="div-cc-exp">
@@ -218,7 +218,7 @@
                         <div class="col-xs-4 col-sm-3 col-md-4">&nbsp;
                         </div>
                         <div class="col-xs-8 col-sm-6 col-md-4">
-                            <button type="button" class="btn btn-danger submit" id="submit-form" style="width: 75%;">Join 1X Tactical</button>
+                            <button type="submit" class="btn btn-danger submit" id="submit-form" style="width: 75%;">Join 1X Tactical</button>
                         </div>
                     </div>
                 </form>

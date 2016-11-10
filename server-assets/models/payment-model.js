@@ -1,6 +1,6 @@
 let stripe = require("stripe")("sk_test_tlI06RUdE1tVOzucTg99mHne");
 
-function create(body) {
+function create(body, cb) {
     console.log('creating membership charge...');
     var token = body.stripeToken;
     console.log('Stripe Token: ' + token);
@@ -13,8 +13,9 @@ function create(body) {
     console.log('Charge Object:' + chargeObj);
     var charge = stripe.charges.create(chargeObj, function (err, charge) {
         if (err && err.type == 'StripeCardError') {
-            return { "error": "The card has been declined." };
+            return cb({ "error": "The card has been declined." });
         }
+        return cb({"message":"Successful.", "charge":charge});
     });
 };
 

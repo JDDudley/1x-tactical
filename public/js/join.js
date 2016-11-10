@@ -11,6 +11,7 @@ $(document).ready(function () {
         }
     });
     function stripeResponseHandler(status, response) {
+        debugger;
         var joinForm = $('#join-form');
         if (response.error) {
             joinForm.find('.payment-errors').text(response.error.message);
