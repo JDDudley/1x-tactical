@@ -44,8 +44,7 @@
             <div class="col-xs-12 signup-box">
                 <!--start join form-->
                 <h4>User Information</h4>
-                <form class="form-horizontal" id="join-form" action="/api/payment/membership" method="POST">
-                <!--<form class="form-horizontal" id="join-form">-->
+                <form class="form-horizontal" id="join-form" action="http://1xtactical.com/api/payment/membership" method="POST">
                     <div class="form-group" id="div-firstname">
                         <label class="col-xs-4 col-sm-3 col-md-4 control-label">First Name</label>
                         <div class="col-xs-8 col-sm-6 col-md-4">
@@ -183,7 +182,7 @@
                     <div class="form-group" id="div-cc">
                         <label class="col-xs-4 col-sm-3 col-md-4 control-label">Card Number</label>
                         <div class="col-xs-8 col-sm-6 col-md-4">
-                            <input type="text" class="form-control" data-stripe="number" placeholder="Debit/Credit Card Number">
+                            <input type="text" class="form-control" maxlength="16" data-stripe="number" placeholder="Debit/Credit Card Number">
                         </div>
                     </div>
                     <div class="form-group" id="div-cc-exp">
@@ -198,7 +197,7 @@
                     <div class="form-group" id="div-cc-cvc">
                         <label class="col-xs-4 col-sm-3 col-md-4 control-label">Card CVC</label>
                         <div class="col-xs-4 col-sm-3 col-md-2">
-                            <input type="text" class="form-control" data-stripe="cvc" placeholder="Security Code">
+                            <input type="text" class="form-control" maxlength="3" data-stripe="cvc" placeholder="Security Code">
                         </div>
                     </div>
                     <h4>Total Cost</h4>
@@ -239,7 +238,7 @@
     <!--stripe-->
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript">
-        Stripe.setPublishableKey('pk_test_LMxPcEhOwhfA2eb3hWCjNMh1');
+        Stripe.setPublishableKey('pk_live_UGz6w7dOrUyNaGH0wtXDay1C');
         console.log('Publishable Key set...');
     </script>
     <!--custom js-->

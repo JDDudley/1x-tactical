@@ -1,6 +1,6 @@
-let stripe = require("stripe")("sk_test_tlI06RUdE1tVOzucTg99mHne");
+let stripe = require("stripe")("sk_live_vtQViHmHf6PpXaBRHEXjrty8");
 
-function create(body, cb) {
+function create(body) {
     console.log('creating membership charge...');
     var token = body.stripeToken;
     console.log('Stripe Token: ' + token);
@@ -10,15 +10,14 @@ function create(body, cb) {
         "source": token,
         "description": "1X Tactical Yearly Membership"
     }
-    console.log('Charge Object:',chargeObj);
-    stripe.charges.create(chargeObj, function (err, charge) {
-        if (err) {
-            return cb({ "error": "The card has been declined", "errorType":err });
+    console.log('Charge Object:' + chargeObj);
+    var charge = stripe.charges.create(chargeObj, function (err, charge) {
+        if (err && err.type == 'StripeCardError') {
+            return { "error": "The card has been declined." };
         }
-        return cb({ "message": "Successful.", "charge": charge });
     });
 };
 
-module.exports = {
+module.exports={
     create
 }
