@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
 }
 .section-benefits {
-    background-color: rgba(100,0,0,0.25);
+    background-color: rgba(0,60,0,0.25);
     font-size: 2rem;
 }
 .benefit-list {
@@ -98,31 +98,12 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 8px;
 }
 .section-armory {
-    background-color: rgba(100,0,0,0.25);
+    background-color: rgba(0,60,0,0.25);
     text-align: center;
 }
 .supplier-list {
     background-color: white;
     text-align: center;
-}
-.supplier-div {
-    height: 180px;
-    vertical-align: bottom;
-    padding: 6px;
-    margin-top: 6px;
-    margin-bottom: 6px;
-    position: relative;
-    /*border-bottom: 1px solid lightgray;*/
-}
-.supplier-img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-width: 100%;
-    max-height: 100%;
 }
 .footer {
     background-color: black;
