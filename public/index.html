@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="1x">
 
 <head>
     <meta charset="UTF-8">
@@ -9,13 +9,15 @@
         crossorigin="anonymous">
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Oswald|Raleway" rel="stylesheet">
-    <!--custom-->
+    <!--custom--> 
     <link rel="stylesheet" href="/css/style.css">
     <!--mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body id="top">
+
+    
     <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -29,332 +31,61 @@
             </div>
             <div class="collapse navbar-collapse" id="nav-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#1x-mindset" id="nav-mindset">Mindset</a></li>
-                    <li><a href="#member-benefits" id="nav-benefits">Benefits</a></li>
-                    <li><a href="#membership" id="nav-membership">Membership</a></li>
-                    <li><a href="#armory" id="nav-armory">Armory</a></li>
+                    <li ui-sref-active="active"><a ui-sref="mindset">Mindset</a></li>
+                    <li ui-sref-active="active"><a ui-sref="benefits">Benefits</a></li>
+                    <li ui-sref-active="active"><a ui-sref="membership">Membership</a></li>
+                    <li ui-sref-active="active"><a ui-sref="armory">Armory</a></li>
                     <!--<li><a href="#training" id="nav-training">Training</a></li>-->
                     <!--<li><a href="#news" id="nav-news">News</a></li>-->
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container-fluid home-container">
-        <div class="row section-top full-height" id="top">
-            <div class="col-xs-12">
-                <h1 class="tagline-2">Arm Up,<br>Train Up,<br>Stand Up!</h1>
-                <a href="/join.html"><button class="btn btn-danger join-btn">Join Now!</button></a>
-                <br>
-                <!--signup form newsletter-->
-                <div class="hidden-xs col-sm-2 col-md-3 col-lg-4"></div>
-                <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
-                    <h2 id="newsletter-h">Stay Informed</h2>
-                    <div class="alert alert-success hidden" id="mailing-list-success">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Welcome!</strong><br>You have been successfully added to the mailing list. We will keep you informed of all new developments at 1X Tactical!
-                    </div>
-                    <div class="alert alert-danger hidden" id="mailing-list-danger">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>No Valid Email Address</strong><br>Please enter a valid email address and try again!
-                    </div>
-                    <form id="newsletter-signup">
-                        <div class="input-group">
-                            <input type="email" class="form-control" id="newsletter-email" placeholder="Enter your email address...">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-danger" id="newsletter-submit">Subscribe</button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="row section-mindset full-height" id="1x-mindset">
-            <div class="col-xs-1 col-md-2 col-lg-3"></div>
-            <div class="col-xs-10 col-md-8 col-lg-6">
-                <h2 class="section-header">1X Mindset</h2><br>
-                <p>You are the First Responder of your own life.</p><br>
-                <p>If you are not training to defend what is yours, it can quickly be taken from you.</p><br>
-                <p>When you join 1X Tactical, you become part of a team whose beliefs are aligned, who train together and when
-                    the situation calls for it rely on one another.</p>
-            </div>
-        </div>
-        <div class="row section-benefits full-height" id="member-benefits">
-            <div class="col-xs-1 col-md-2 col-lg-3"></div>
-            <div class="col-xs-10 col-md-8 col-lg-6">
-                <h2 class="section-header">Membership Benefits</h2>
-                <p>Awesome Pricing on Awesome Products-  For $99 a year you are able to purchase, guns, ammo, tactical gear, hunting gear, survival gear and much more at close to wholesale pricing.</p>
-                <h3>Training</h3>
-                <p>Receive discount pricing on our training courses as well as have the opportunity to partner with us in bringing our courses to your area and receive 15% of the profits!</p>
-                <h3>Support our Veterans</h3>
-                <p>For the past 13 years we have been at war.  Many of our men and woman in the Armed Forces are subject matter experts in different training and tactics but don't work at jobs that require these sets of skills.  We are building a roster of vetted subject matter experts from the Military that can pass on to our members their unique set of skills through our training courses.</p>
-                <h3>ARM UP, TRAIN UP, STAND UP!</h3>
-            </div>
-        </div>
-        <div class="row section-membership full-height" id="membership">
-            <div class="col-xs-1 col-md-2 col-lg-3"></div>
-            <div class="col-xs-10 col-md-8 col-lg-6">
-                <h2 class="section-header">Team Membership</h2>
-                <p>Join 1X Tactical to gain access to a wide range of training and support from experts in their fields.</p>
-                <p>Members also enjoy huge discounts on all supplies in the armory. Membership cost is an affordable $99/year.
-                    Act now for your chance to win $1,000 in gear!</p>
-                <p>The first 100 to sign up will be entered into a drawing for <strong>$1,000 of Tactical Gear!</strong></p>
-                <br><br>
-            </div>
-            <br><br>
-            <div class="col-xs-12 text-center" id="membership-btn-div">
-                <a href="/join.html"><button class="btn btn-danger join-btn">Join Now!</button></a>
-            </div>
-            <div class="signup-box col-xs-12 hidden">
-                <!--<button type="button" class="btn btn-danger hidden" id="submit-form">Submit</button>-->
-            </div>
-        </div>
-        <div class="row section-armory full-height" id="armory">
-            <div class="col-xs-12">
-                <h2 class="section-header">The Armory</h2>
-                <h2 style="text-align: center;">COMING SOON!</h2>
-                <p>1X Tactical Team Members receive discount pricing on quality, brand-name products within the shooting, tactical,
-                    camping and survival industry.</p>
-                <br>
-            </div>
-            <div class="col-xs-12 supplier-list">	
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/1791.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/3s_tactical.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/adaptive_tactical.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/amend2.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/ammo-up.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/armalite.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/axelson_tactical.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/black_scorpion.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/breakthrough.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/carlsons.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/chaos.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/clearchoice_ammunition.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/clipdraw.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/constitution_arms.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/crossfire.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/dark_storm_industries.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/davinci_arms.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/drd_tactical.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/elf.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/explorer_cases.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/first_edge.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/founding_fathers_armory.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/great_day.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/gunfighters_inc.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/gungenics.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/guntec_usa.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/handi-racker.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/handl_defense.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/ht_holsters.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/ironclad_freedom.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/iver_johnson_arms.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/james_madison.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/koda_adventure_gear.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/leatherhead.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/ledwave.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/loadingrepubliclogo.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/magstorage_solutions.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/miltac.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/miss_concealed.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/mtp_firearm.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/nextgenar.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/odin_works.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/offhand_gear.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/outdoor_shooter_supply.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/p80.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/paper_city_firearms.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/phoenix_technology.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/pyramex.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/quicksafes.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/ramrodz.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/rebel_silencers.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/rz_industries.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/seal_1.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/sellmark.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/southern_grind.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/ssp_eyewear.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/stag_arms.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/surefire.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/tac_pac.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/taccon.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/team_never_quit.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/tegra.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/tekmat.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/the_gun_company.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/tippmann_armory.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/tk_tandemkross.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/um_tactical.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/wise_company.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/wm_tactical.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/x_products.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/zcorr.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/zero_bravo.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/zubin.jpg">
-                </div>
-				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 supplier-div">
-					<img class="supplier-img" src="suppliers/zubin_axe.jpg">
-				</div>
-            </div>
-        </div>
+
+
+<!-----------------------------ANGULAR-------------------------------------------------------------------------->
+<div class="main-content">
+        <ui-view></ui-view>
+    </div>
+<!------------------------------------------------------------------------------------------------------------------>
+
+
+
+
         <div class="row footer">
             <div class="col-xs-12">
                 &copy; 2016 1X Tactical.
             </div>
         </div>
     </div>
+
+
+
+    
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <!--bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+   
+   <!--angular-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
+   
     <!--custom js-->
     <script src="/js/index.js"></script>
+    <script src="app.js"></script>
+    <script src="app-routes.js"></script>
+    <script src="/app/components/home/home-controller.js"></script>
+    <script src="/app/components/mindset/mindset-controller.js"></script>
+    <script src="/app/components/benefits/benefits-controller.js"></script>
+    <script src="/app/components/membership/membership-controller.js"></script>
+    <script src="/app/components/armory/armory-controller.js"></script>
+    <script src="/app/components/cart/cart-controller.js"></script>
+
 </body>
 
 </html>
