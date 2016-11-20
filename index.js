@@ -4,7 +4,7 @@ let express = require('express')
 ,routes=require('./server-assets/routes/index')
 ,handlers = require('./utils/handler')
 ,server = express()
-,port = 8080
+,port = process.env.PORT || 1776
 
 
 
