@@ -28,7 +28,8 @@ return{
         isMember: true,  
         isAdmin: false,
         onMailingList: true,
-        paymentInfo:member.paymentInfo
+        paymentInfo:member.paymentInfo,
+        shoppingCart: member.shoppingCart || {}
     }
 }
 

@@ -1,18 +1,21 @@
-//smooth scroll
-$(document).ready(function () {
-  //smooth scroll
-  $("a").on('click', function (event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-      var hash = this.hash;
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function () {
-        window.location.hash = hash;
-      });
-    }
-  });
-});
+// //smooth scroll
+// $(document).ready(function () {
+//   //smooth scroll
+//   $("a").on('click', function (event) {
+//     if (this.hash !== "") {
+//       event.preventDefault();
+//       var hash = this.hash;
+//       $('html, body').animate({
+//         scrollTop: $(hash).offset().top
+//       }, 800, function () {
+//         window.location.hash = hash;
+//       });
+//     }
+//   });
+// });
+
+
+
 $(function () {
   const joinPg = 'components/join.html';
   //collapse mobile menu when item selected
@@ -38,6 +41,8 @@ $(function () {
       var re = /\S+@\S+\.\S+/;
       return re.test(email);
   }
+
+
   //join button
   // $('.join-btn').on('click', function () {
   //   $('.signup-box').load(joinPg);
