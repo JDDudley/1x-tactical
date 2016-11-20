@@ -9,15 +9,13 @@
         crossorigin="anonymous">
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Oswald|Raleway" rel="stylesheet">
-    <!--custom--> 
+    <!--custom-->
     <link rel="stylesheet" href="/css/style.css">
     <!--mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body id="top">
-
-    
     <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -41,51 +39,43 @@
             </div>
         </div>
     </div>
-
-
-<!-----------------------------ANGULAR-------------------------------------------------------------------------->
-<div class="main-content">
-        <ui-view></ui-view>
-    </div>
-<!------------------------------------------------------------------------------------------------------------------>
-
-
-
-
+    <div class="container-fluid main-bg">
+        <!--Angular-->
+        <div class="main-content">
+            <ui-view></ui-view>
+        </div>
+        <!--End Angular-->
         <div class="row footer">
             <div class="col-xs-12">
-                &copy; 2016 1X Tactical.
+                &copy; 2016 1X Tactical.<br> [ <a ui-sref="mindset">Mindset</a> ] [ <a ui-sref="benefits">Benefits</a> ]
+                [ <a ui-sref="membership">Membership</a> ] [ <a ui-sref="armory">Armory</a> ]
             </div>
         </div>
     </div>
-
-
-
-    
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <!--bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-   
-   <!--angular-->
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
-
-   
+    <!--angular-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
     <!--custom js-->
     <script src="/js/index.js"></script>
     <script src="app.js"></script>
     <script src="app-routes.js"></script>
     <script src="/app/components/home/home-controller.js"></script>
+    <script src="/app/components/join/join-controller.js"></script>
     <script src="/app/components/mindset/mindset-controller.js"></script>
     <script src="/app/components/benefits/benefits-controller.js"></script>
     <script src="/app/components/membership/membership-controller.js"></script>
     <script src="/app/components/armory/armory-controller.js"></script>
     <script src="/app/components/cart/cart-controller.js"></script>
-
+    <!--need's cart service form Clint-->
+    <script src="/app/components/admin/admin-controller.js"></script>
+    <script src="/app/components/admin/admin-service.js"></script>
 </body>
 
 </html>

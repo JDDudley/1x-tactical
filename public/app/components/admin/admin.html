@@ -1,0 +1,29 @@
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<h1>ARM UP, TRAIN UP, STAND UP</h1>    
+<h1>Product Manager</h1>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-12">
+<form ng-submit="$ctrl.addItem($ctrl.newItem)" style="color:black">
+<input ng-model="$ctrl.newItem.name" type="text" placeholder="Product Name">
+<input ng-model="$ctrl.newItem.brand"  type="text" placeholder="Brand">
+<input ng-model="$ctrl.newItem.category"  type="text" placeholder="Category">
+<input ng-model="$ctrl.newItem.description" type="text" placeholder="Description">
+<input ng-model="$ctrl.newItem.specs" type="text" placeholder="Specs (separate with comma) ">
+<input ng-model="$ctrl.newItem.msrp" type="text" placeholder="MSRP">
+<input ng-model="$ctrl.newItem.memberPrice" type="text" placeholder="Non-Member Price">
+<input ng-model="$ctrl.newItem.nonMemberPrice" type="text" placeholder="Member Price">
+<div id="images"><input ng-model="$ctrl.newItem.image" type="text" placeholder="Image Url" id="img"></div>
+<button ng-click="$ctrl.moreImage()" type="submit" class="btn-warning">Add Another Image</button>
+
+<!--need images-->
+<button type="submit" class="btn-primary" ng-click="$ctrl.addItem($ctrl.newItem)">Submit</button>
+</form>
+
+</div>
+</div>
+</div>

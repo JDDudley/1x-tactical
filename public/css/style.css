@@ -24,6 +24,11 @@ h1, h2, h3, h4, h5, h6 {
     background-attachment: fixed;
     text-align: center;
 }
+.main-bg {
+    background-image: url('/backgrounds/cracked.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
 .tagline-2 {
     line-height: 1.5em;
     margin-top: 10vh;
@@ -55,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 20px;
 }
 .section-mindset {
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(100,0,0,0.25);
     color: #e8e8e8;
     text-align: justify;
     font-size: 24px;
@@ -66,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 .section-membership {
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(100,0,0,0.25);
 }
 .signup-header {
     color: tan !important;
@@ -79,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
 }
 .section-benefits {
-    background-color: rgba(0,60,0,0.25);
+    background-color: rgba(0,0,0,0.25);
     font-size: 2rem;
 }
 .benefit-list {
@@ -98,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 8px;
 }
 .section-armory {
-    background-color: rgba(0,60,0,0.25);
+    background-color: rgba(0,0,0,0.25);
     text-align: center;
 }
 .supplier-list {
