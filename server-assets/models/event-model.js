@@ -16,7 +16,7 @@ function newEvent(event){
         date: event.date,
         minSeat: event.minSeat,
         maxSeat: event.maxSeat,
-        price: event.price
+        price: event.price,
         description: event.description,
         photos: event.photos || [],
         deleted: false
