@@ -63,6 +63,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
     <!--custom js-->
+    <!--stripe-->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+        Stripe.setPublishableKey('pk_live_UGz6w7dOrUyNaGH0wtXDay1C');
+        console.log('Publishable Key set...');
+    </script>
     <script src="/js/index.js"></script>
     <script src="/js/join.js"></script>
     <script src="app.js"></script>
