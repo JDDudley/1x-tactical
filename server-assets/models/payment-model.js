@@ -5,7 +5,7 @@ function create(body) {
     var token = body.stripeToken;
     console.log('Stripe Token: ' + token);
     var chargeObj = {
-        "amount": 9900,
+        "amount": 100,
         "currency": "usd",
         "source": token,
         "description": "1X Tactical Yearly Membership"
