@@ -4,8 +4,9 @@ function create(body) {
     console.log('creating membership charge...');
     var token = body.stripeToken;
     console.log('Stripe Token: ' + token);
+    var chargeAmt = 9900;
     var chargeObj = {
-        "amount": 100,
+        "amount": chargeAmt,
         "currency": "usd",
         "source": token,
         "description": "1X Tactical Yearly Membership"
