@@ -14,6 +14,11 @@ function create(body) {
     var charge = stripe.charges.create(chargeObj, function (err, charge) {
         if (err && err.type == 'StripeCardError') {
             return { "error": "The card has been declined." };
+        } else if (err) {
+            return { "error": err };
+        } else {
+            //success
+            console.log(charge);
         }
     });
 };
