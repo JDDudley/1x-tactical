@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Event = require('../models/event-model');
 
-module.exports.mountPath = '/event'
+module.exports.mountPath = '/events'
 module.exports.router = router;
 
 router.route('/:id?')

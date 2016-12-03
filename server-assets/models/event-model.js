@@ -5,15 +5,23 @@ let dataAdapter = require('../models/data-adapter'),
 
   let Events = DS.defineResource({
     name: 'events',
-    endpoint: 'events'
+    endpoint: 'events',
+    relations:{
+        belongsTo:{
+            category: {
+                localField: 'category',
+                localKey: 'categoryId' 
+            }
+        }
+    }
 })
 
 function newEvent(event){
     return{
         id: event.id || uuid.v4(),
-        category: event.category,
         name: event.name,
         date: event.date,
+        time: event.time,
         minSeat: event.minSeat,
         maxSeat: event.maxSeat,
         price: event.price,
@@ -29,9 +37,10 @@ addEvent=(event, cb)=>{
     Events.create(eventObj).then(cb).catch(cb)
 }
 
+//will always return Events with the category. 
 getAll=(cb)=>{
-    Events.findAll({}).then(cb).catch(cb)
-}
+    Events.findAll({}, {'with': ['category']}).then(cb).catch(cb)
+    }
 
 getEventById = function(id, cb){
     Events.find(id).then(cb).catch(cb)
