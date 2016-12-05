@@ -1,25 +1,51 @@
 var StoreData = angular.module('1x');
 StoreData.service('AdminService', function ($http) {
 
-    var url = 'http://localhost:8080/api/store'
+    let storeUrl = 'http://localhost:8080/api/store'
+    let eventUrl = 'http://localhost:8080/api/events'
     let as = this;
 
     as.addProduct = (product) => {
-        debugger
-        var productObj = {
+        let productObj = {
             "product": {
-                "category": product.category,
+                // "category": product.category,
                 "name": product.name,
                 "description": product.description,
                 "specs": product.specs || '',
-                "images": product.images || [],
+                "images": product.image || {},
                 "msrp": product.msrp,
                 "memberPrice": product.memberPrice,
                 "nonMemberPrice": product.nonMemberPrice,
                 "inStock": true,
                 "inStore": true
             }
+            
         }
-        $http.post(url, productObj)
+
+        // for (img in product.image['*']){
+        //   productObj.product.[images].push(img)
+        // }
+        $http.post(storeUrl, productObj)
     }
+
+
+    as.addEvent = (event) => {
+        let eventObj = {
+            "event": {
+                "name": event.name,
+                "date": event.date,
+                "time": event.time, 
+                "minSeat": event.minSeat,
+                "maxSeat": event.maxSeat,
+                "price": event.price,
+                "description": event.description,
+                "photos": event.image || [],
+                "deleted": false
+            }
+        }
+        $http.post(eventUrl, eventObj)
+    }
+
+
+
 })

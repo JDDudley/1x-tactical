@@ -1,29 +1,92 @@
-<div class="container">
-<div class="row">
-<div class="col-xs-12">
-<h1>ARM UP, TRAIN UP, STAND UP</h1>    
-<h1>Product Manager</h1>
-</div>
-</div>
+<div class="row full-height">
+    <div class="hidden-xs col-sm-2 col-md-3 col-lg-4"></div>
+    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+        <h2 class="text-center">Administrator Page</h2>
 
-<div class="row">
-<div class="col-xs-12">
-<form ng-submit="$ctrl.addItem($ctrl.newItem)" style="color:black">
-<input ng-model="$ctrl.newItem.name" type="text" placeholder="Product Name">
-<input ng-model="$ctrl.newItem.brand"  type="text" placeholder="Brand">
-<input ng-model="$ctrl.newItem.category"  type="text" placeholder="Category">
-<input ng-model="$ctrl.newItem.description" type="text" placeholder="Description">
-<input ng-model="$ctrl.newItem.specs" type="text" placeholder="Specs (separate with comma) ">
-<input ng-model="$ctrl.newItem.msrp" type="text" placeholder="MSRP">
-<input ng-model="$ctrl.newItem.memberPrice" type="text" placeholder="Non-Member Price">
-<input ng-model="$ctrl.newItem.nonMemberPrice" type="text" placeholder="Member Price">
-<div id="images"><input ng-model="$ctrl.newItem.image" type="text" placeholder="Image Url" id="img"></div>
-<button ng-click="$ctrl.moreImage()" type="submit" class="btn-warning">Add Another Image</button>
 
-<!--need images-->
-<button type="submit" class="btn-primary" ng-click="$ctrl.addItem($ctrl.newItem)">Submit</button>
-</form>
 
-</div>
-</div>
+        <!--Add Item To Store-->
+        <h3>Arm Up</h3>
+        <form ng-submit="$ctrl.addItem($ctrl.newItem)">
+            <label>Product Name:</label>
+            <input class="form-control" ng-model="$ctrl.newItem.name" type="text">
+            <label>Brand: </label>
+            <input class="form-control" ng-model="$ctrl.newItem.brand" type="text" placeholder="Brand">
+            <label>Category</label>
+            <label for="sel1">Category:</label>
+            <select class="form-control" id="sel1">
+                   <option>Guns</option>
+                   <option>Ammo</option>
+                   <option>Tactical Gear</option>
+                   <option>Hunting</option>
+                   <option>Prepping</option>
+                   <option>Knives and Tools</option>
+                   <option>Apparel</option>
+                   <option>Optics</option>
+                   <option>Accessories</option>
+                   <option>Camping and Survival</option>
+                   <option>Cases and Bags</option>
+                </select>
+            <label>Description</label>
+            <textarea class="form-control" ng-model="$ctrl.newItem.description" type="text" placeholder="Description"></textarea>
+            <label>Specs (Separate by comma)</label>
+            <input class="form-control" ng-model="$ctrl.newItem.specs" type="text" placeholder="Specs (separate with comma) ">
+            <label>MSRP</label>
+            <input class="form-control" ng-model="$ctrl.newItem.msrp" type="text" placeholder="MSRP">
+            <label>Non-Member Price</label>
+            <input class="form-control" ng-model="$ctrl.newItem.memberPrice" type="text" placeholder="Non-Member Price">
+            <label>Member Price</label>
+            <input class="form-control" ng-model="$ctrl.newItem.nonMemberPrice" type="text" placeholder="Member Price">
+
+            <label>Images</label>
+            <div id="product-images">
+                <input class="form-control image-class" ng-model="$ctrl.newItem.image[0]" type="text" placeholder="Image Url">
+                <input class="form-control image-class" ng-model="$ctrl.newItem.image[1]" type="text" placeholder="Image Url">
+                <input class="form-control image-class" ng-model="$ctrl.newItem.image[3]" type="text" placeholder="Image Url">
+                <input class="form-control image-class" ng-model="$ctrl.newItem.image[4]" type="text" placeholder="Image Url">
+                <input class="form-control image-class" ng-model="$ctrl.newItem.image[5]" type="text" placeholder="Image Url">
+            </div>
+            <button ng-click="$ctrl.moreImage()" class="btn-warning" type="button">Add Another Image</button>
+
+            <button type="submit" class="btn-primary">Submit</button>
+        </form>
+
+        <!--Add Event to Events Page-->
+        <!--
+    Events will be a category and will have a uuid. 
+-->
+        <h3>Train Up</h3>
+        <form ng-submit="$ctrl.addEvent($ctrl.newEvent)">
+            <label>Event Name</label>
+            <input class="form-control" ng-model="$ctrl.newEvent.name" type="text" placeholder="Event Name">
+            <label>Price</label>
+            <!--Member Price is 10% of Non-Member Price-->
+            <input class="form-control" ng-model="$ctrl.newEvent.price" type="text" placeholder="Price">
+            <label>Description</label>
+            <textarea class="form-control" ng-model="$ctrl.newEvent.description" type="text" placeholder="Description"></textarea>
+            <label>Date</label>
+            <input class="form-control" ng-model="$ctrl.newEvent.date" type="text" placeholder="Date">
+            <label>Time</label>
+            <input class="form-control" ng-model="$ctrl.newEvent.time" type="text" placeholder="Time">
+            <label>Min Seats</label>
+            <input class="form-control" ng-model="$ctrl.newEvent.minSeat" type="text" placeholder="Min Seats">
+            <label>Max Seats</label>
+            <input class="form-control" ng-model="$ctrl.newEvent.maxSeat" type="text" placeholder="Max Seats">
+            <label>Images </label>
+            <div id="event-images">
+
+                
+                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[0]" type="text" placeholder="Image Url">
+                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[1]" type="text" placeholder="Image Url">
+                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[3]" type="text" placeholder="Image Url">
+                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[4]" type="text" placeholder="Image Url">
+                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[5]" type="text" placeholder="Image Url">
+
+                </div>
+
+            <button ng-click="$ctrl.moreImage('event')" type="submit" class="btn-warning">Add Another Image</button>
+            <button type="submit" class="btn-primary" ng-click="$ctrl.addEvent($ctrl.newEvent)">Submit</button>
+        </form>
+    </div>
+    <div class="hidden-xs col-sm-2 col-md-3 col-lg-4"></div>
 </div>

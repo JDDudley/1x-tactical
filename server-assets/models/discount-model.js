@@ -9,7 +9,15 @@ const dataAdapter = require('../models/data-adapter'),
 
 let Discount = DS.defineResource({
     name: 'discount',
-    endpoint: 'discount'
+    endpoint: 'discount',
+    relations: {
+        belongsTo: {
+            product:{
+                localField: 'product',
+                localKey: 'productId'
+            }
+        }
+    }
 })
 
 newDiscount = (discount)=>{
