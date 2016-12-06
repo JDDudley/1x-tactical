@@ -21,10 +21,6 @@ StoreData.service('AdminService', function ($http) {
             }
             
         }
-
-        // for (img in product.image['*']){
-        //   productObj.product.[images].push(img)
-        // }
         $http.post(storeUrl, productObj)
     }
 
