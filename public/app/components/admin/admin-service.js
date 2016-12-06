@@ -10,6 +10,8 @@ StoreData.service('AdminService', function ($http) {
             "product": {
                 // "category": product.category,
                 "name": product.name,
+                "brand": product.brand || "No brand now due to testing",
+                "category": product.category || "No Category now due to testing",
                 "description": product.description,
                 "specs": product.specs || '',
                 "images": product.image || {},
@@ -22,7 +24,13 @@ StoreData.service('AdminService', function ($http) {
             
         }
         $http.post(storeUrl, productObj)
-    }
+            .success(function(data){
+                console.log("successfully posted")
+            }).error(function(data){
+                console.log("error in posting")
+            })
+
+ }
 
 
     as.addEvent = (event) => {
@@ -40,6 +48,11 @@ StoreData.service('AdminService', function ($http) {
             }
         }
         $http.post(eventUrl, eventObj)
+        .success(function(data){
+                console.log("successfully posted")
+            }).error(function(data){
+                console.log("error in posting")
+            })
     }
 
 

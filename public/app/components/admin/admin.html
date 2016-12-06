@@ -40,7 +40,7 @@
 
             <label>Images</label>
             <div id="product-images">
-                <input class="form-control image-class" ng-model="$ctrl.newItem.image[0]" type="text" placeholder="Image Url">
+                <input class="form-control image-class" ng-model="$ctrl.newItem.image[0]" type="text" placeholder="Image Url   Include http:\\  before all images  ">
                 <input class="form-control image-class" ng-model="$ctrl.newItem.image[1]" type="text" placeholder="Image Url">
                 <input class="form-control image-class" ng-model="$ctrl.newItem.image[3]" type="text" placeholder="Image Url">
                 <input class="form-control image-class" ng-model="$ctrl.newItem.image[4]" type="text" placeholder="Image Url">
@@ -65,9 +65,9 @@
             <label>Description</label>
             <textarea class="form-control" ng-model="$ctrl.newEvent.description" type="text" placeholder="Description"></textarea>
             <label>Date</label>
-            <input class="form-control" ng-model="$ctrl.newEvent.date" type="text" placeholder="Date">
+            <input class="form-control" ng-model="$ctrl.newEvent.date" type="text" placeholder="MM/DD/YYYY">
             <label>Time</label>
-            <input class="form-control" ng-model="$ctrl.newEvent.time" type="text" placeholder="Time">
+            <input class="form-control" ng-model="$ctrl.newEvent.time" type="text" placeholder="HH:MM">
             <label>Min Seats</label>
             <input class="form-control" ng-model="$ctrl.newEvent.minSeat" type="text" placeholder="Min Seats">
             <label>Max Seats</label>

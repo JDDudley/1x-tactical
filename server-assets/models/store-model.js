@@ -58,8 +58,6 @@ let Category = DS.defineResource({
 function newProduct(product) {
     return {
         id: product.id || uuid.v4(),
-        brand: category.brand,
-        category: product.category,
         name: product.name,
         description: product.description,
         specs: product.specs || [],
