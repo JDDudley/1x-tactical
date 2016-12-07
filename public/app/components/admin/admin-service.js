@@ -1,17 +1,15 @@
 var StoreData = angular.module('1x');
 StoreData.service('AdminService', function ($http) {
 
-    let storeUrl = 'http://localhost:8080/api/store'
-    let eventUrl = 'http://localhost:8080/api/events'
+    let storeUrl = '/api/store'
+    let eventUrl = '/api/events'
     let as = this;
 
     as.addProduct = (product) => {
         let productObj = {
             "product": {
-                // "category": product.category,
                 "name": product.name,
-                "brand": product.brand || "No brand now due to testing",
-                "category": product.category || "No Category now due to testing",
+                "category": product.category,
                 "description": product.description,
                 "specs": product.specs || '',
                 "images": product.image || {},
@@ -21,8 +19,9 @@ StoreData.service('AdminService', function ($http) {
                 "inStock": true,
                 "inStore": true
             }
-            
         }
+            console.log(productObj.product.category)
+
         $http.post(storeUrl, productObj)
             .success(function(data){
                 console.log("successfully posted")
