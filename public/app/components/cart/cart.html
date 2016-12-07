@@ -36,3 +36,28 @@
         </tfoot>
     </table>
 </div>
+
+<div class="container-fluid">
+    <div class="row">
+        <select ng-model="$ctrl.filterBy" style="color:black">
+            <option value="name" ng-selected>Name</option>
+            <option value="id">ID</option>
+        </select>
+        <input type="text" ng-model="$ctrl.query[$ctrl.filterBy]" style="color:black">
+        <button class="btn-success" type="button">Search</button>
+    </div>
+    <div class="row">
+        <div ng-repeat="product in $ctrl.products | filter: $ctrl.query" class="col-sm-4">
+            <div class="shopping-product">
+                <img ng-src="{{product.images[0]}}">
+                <h3 class="product-name">{{product.name}}</h3>
+                <p class="product-name">{{product.description}}</p>
+                <p class="product-price">MSRP: {{product.msrp | currency}}</p>
+                <p class="product-price">Members: {{product.memberPrice | currency}}</p>
+                <p class="product-price">Non-Members {{product.nonMemberPrice | currency}}</p>
+                <p class="product-price">Members Save: {{(product.msrp-product.memberPrice)/product.msrp*100 | number : 0}}%</p>
+                <button class="btn btn-xs btn-primary" ng-click="$ctrl.addProductToCart(product)">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

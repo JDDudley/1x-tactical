@@ -6,16 +6,23 @@
             controller: CartController
         })
 
-    function CartController() {
+    CartController.$inject = ['CartService']
+
+    function CartController(CartService) {
+        // debugger
 
         this.cartStatus = 'Working'
 
         this.cart = []
 
-        // this.store = {
-        //     products: Service
-        //     Need to know the Data Store, check the cart branch
-        // }
+        this.products = []
+
+        this.store = CartService.getAll((products) => {
+            console.log(products.data[0].msrp)
+            this.products = products.data
+            return this.products
+        })
+
 
         this.name = 'My Cart'
 
@@ -23,7 +30,7 @@
             return this.cart.length
         }
 
-        this.calculateMsrp = function () {            
+        this.calculateMsrp = function () {
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
                 var total = this.cart[i].msrp * this.cart[i].quantity;
@@ -32,7 +39,7 @@
             return sum
         }
 
-        this.calculateMembers = function () {            
+        this.calculateMembers = function () {
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
                 var total = this.cart[i].memberPrice * this.cart[i].quantity;
@@ -41,7 +48,7 @@
             return sum
         }
 
-        this.calculateNonMembers = function () {            
+        this.calculateNonMembers = function () {
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
                 var total = this.cart[i].nonMemberPrice * this.cart[i].quantity;
