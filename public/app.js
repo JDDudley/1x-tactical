@@ -6,5 +6,4 @@ var app = angular.module('1x', [
     'ngSanitize'
     ]); 
 
-
 })();
