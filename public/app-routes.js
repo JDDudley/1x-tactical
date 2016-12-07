@@ -43,6 +43,10 @@
                     name: 'admin',
                     url: '/admin',
                     template: '<admin></admin>'
+                }).state({
+                    name: 'events',
+                    url: '/events',
+                    template: '<events></events>'
                 })
         })
 })(); 
