@@ -6,62 +6,62 @@ let dataAdapter = require('../models/data-adapter'),
 let Store = DS.defineResource({
     name: 'store',     
     endpoint: 'store',
-    relations: {
-        belongsTo: {
-            brand: {
-                localField: 'brand',
-                localKey: 'brandId',
-                // parent: true
-            },
-            category: {
-                localField: 'category',
-                localKey: 'categoryId',
-                // parent: true
-            }
-        }
-    }
+    // relations: {
+    //     // belongsTo: {
+    //     //     brand: {
+    //     //         localField: 'brand',
+    //     //         localKey: 'brandId',
+    //     //         // parent: true
+    //     //     },
+    //         category: {
+    //             localField: 'category',
+    //             localKey: 'categoryId',
+    //             // parent: true
+    //         }
+    // }
 })
 
-let Brand = DS.defineResource({
-    name: 'brand',
-    endpoint: 'brand',
-    relations: {
-        hasMany: {
-            store: { //has many products
-                localField: 'products', //brand.products = array of products in this brand
-                foreignKey: 'productId'
-            }
-        }
-    }
-})
+// let Brand = DS.defineResource({
+//     name: 'brand',
+//     endpoint: 'brand',
+//     relations: {
+//         hasMany: {
+//             store: { //has many products
+//                 localField: 'products', //brand.products = array of products in this brand
+//                 foreignKey: 'productId'
+//             }
+//         }
+//     }
+// })
 let Category = DS.defineResource({
     name: 'category',
     endpoint: 'category',
-    relations: {
-        hasMany: {
-            store: { //has many products
-                localField: 'products', //brand.products = array of products in this brand
-                foreignKey: 'categoryId'       /////////////TEST
-            },
-            brand: { //has many products
-                localField: 'brands', //brand.products = array of products in this brand
-                foreignKey: 'categoryId'
-            },
-            event:{
-                localField: 'events',
-                foreignKey: 'categoryId'
-            }
-        }
-    }
+    // relations: {
+    //     hasMany: {
+    //         store: { //has many products
+    //             localField: 'products', //brand.products = array of products in this brand
+    //             foreignKey: 'categoryId'       /////////////TEST
+    //         },
+    //         // brand: { //has many products
+    //         //     localField: 'brands', //brand.products = array of products in this brand
+    //         //     foreignKey: 'categoryId'
+    //         // },
+    //         event:{
+    //             localField: 'events',
+    //             foreignKey: 'categoryId'
+    //         }
+    //     }
+    // }
 })
 
 function newProduct(product) {
     return {
         id: product.id || uuid.v4(),
         name: product.name,
+        category: product.category, 
         description: product.description,
-        specs: product.specs || [],
-        images: [],
+        // specs: product.specs || [],
+        images: product.images || {},
         reviews: product.reviews || '',
         msrp: product.msrp,
         memberPrice: product.memberPrice,
@@ -160,7 +160,9 @@ addCategoryToStore = (category, cb) => {
 }
 
 getAllCategories = (cb) => {
-    Category.findAll({}, {with: ['store']}).then(cb).catch(cb)
+    Category.findAll({}).then(cb).catch(cb)
+    //     Category.findAll({}, {with: ['store']}).then(cb).catch(cb)
+
 }
 
 getCategoryById = function (id, cb) {
