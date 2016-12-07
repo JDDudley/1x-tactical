@@ -20,17 +20,17 @@ StoreData.service('AdminService', function ($http) {
                 "inStore": true
             }
         }
-            console.log(productObj.product.category)
+        console.log(productObj.product.category)
 
         $http.post(storeUrl, productObj)
-            .success(function(data){
+            .success(function (data) {
+                let message = " You Successfully Posted the Product " + product.name + "  to the store.";
+                alert(message);
                 console.log("successfully posted")
-            }).error(function(data){
+            }).error(function (data) {
                 console.log("error in posting")
             })
-
- }
-
+    }
 
     as.addEvent = (event) => {
         let eventObj = {
@@ -38,19 +38,21 @@ StoreData.service('AdminService', function ($http) {
                 "name": event.name,
                 "category": "Event",
                 "date": event.date,
-                "time": event.time, 
+                "time": event.time,
                 "minSeat": event.minSeat,
                 "maxSeat": event.maxSeat,
                 "price": event.price,
                 "description": event.description,
-                "images": event.image || [],
+                "images": event.image || {},
                 "deleted": false
             }
         }
+        let message = " You Successfully Posted the Event " + event.name + " to the event page.";
+        alert(message);
         $http.post(eventUrl, eventObj)
-        .success(function(data){
+            .success(function (data) {
                 console.log("successfully posted")
-            }).error(function(data){
+            }).error(function (data) {
                 console.log("error in posting")
             })
     }
