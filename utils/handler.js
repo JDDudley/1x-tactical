@@ -21,7 +21,7 @@ function defaultErrorHandler(err, req, res, next) {
   res.send(error);
 }
 
-var whitelist = ['http://localhost:8080']; 
+var whitelist = ['http://localhost:8080','//1xtactical.com']; 
 var corsOptions = {
   origin: function (origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
