@@ -18,25 +18,7 @@
 <body id="top">
     <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="brand" href="#top"><img src="/images/1x-navbar.png" class="hidden-xs"><img src="/images/1x-text.png"></a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="sr-only">Toggle Navigation</span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="nav-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li ui-sref-active="active"><a ui-sref="mindset">Mindset</a></li>
-                    <li ui-sref-active="active"><a ui-sref="benefits">Benefits</a></li>
-                    <li ui-sref-active="active"><a ui-sref="membership">Membership</a></li>
-                    <li ui-sref-active="active"><a ui-sref="armory">Armory</a></li>
-                    <!--<li><a href="#training" id="nav-training">Training</a></li>-->
-                    <!--<li><a href="#news" id="nav-news">News</a></li>-->
-                </ul>
-            </div>
+            <navbar></navbar>
         </div>
     </div>
     <div class="container-fluid main-bg">
@@ -47,8 +29,9 @@
         <!--End Angular-->
         <div class="row footer">
             <div class="col-xs-12">
-                &copy; 2016 1X Tactical.<br> [ <a ui-sref="mindset">Mindset</a> ] [ <a ui-sref="benefits">Benefits</a> ]
-                [ <a ui-sref="membership">Membership</a> ] [ <a ui-sref="armory">Armory</a> ]
+                &copy; 2016 1X Tactical.<br> [ <a class="footer-link" ui-sref="mindset">Mindset</a> ] [ <a class="footer-link"
+                    ui-sref="benefits">Benefits</a> ] [ <a class="footer-link" ui-sref="membership">Membership</a> ] [ <a class="footer-link"
+                    ui-sref="armory">Armory</a> ]
             </div>
         </div>
     </div>
@@ -72,6 +55,7 @@
     <script src="/js/index.js"></script>
     <script src="app.js"></script>
     <script src="app-routes.js"></script>
+    <script src="/app/components/navbar/navbar.js"></script>
     <script src="/app/components/home/home-controller.js"></script>
     <script src="/app/components/join/join-controller.js"></script>
     <script src="/app/components/mindset/mindset-controller.js"></script>
@@ -82,7 +66,7 @@
     <!--need's cart service form Clint-->
     <script src="/app/components/admin/admin-controller.js"></script>
     <script src="/app/components/admin/admin-service.js"></script>
-        <script src="/app/components/events/events-controller.js"></script>
+    <script src="/app/components/events/events-controller.js"></script>
     <script src="/app/components/events/events-service.js"></script>
 </body>
 

@@ -1,0 +1,22 @@
+<div class="navbar-header">
+    <a class="brand" href="/"><img src="/images/1x-navbar.png" class="hidden-xs"><img src="/images/1x-text.png"></a>
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="sr-only">Toggle Navigation</span>
+                </button>
+</div>
+<div class="collapse navbar-collapse" id="nav-collapse">
+    <ul class="nav navbar-nav navbar-right">
+        <li ui-sref-active="active"><a ui-sref="mindset">Mindset</a></li>
+        <li ui-sref-active="active"><a ui-sref="benefits">Benefits</a></li>
+        <li ui-sref-active="active"><a ui-sref="membership">Membership</a></li>
+        <li ui-sref-active="active"><a ui-sref="events">Events</a></li>
+        <li ui-sref-active="active"><a ui-sref="armory">Armory</a></li>
+        <li ui-sref-active="active" ng-hide="loggedIn"><a href="/" ng-click="SignIn()">Sign In</a></li>
+        <li ui-sref-active="active" ng-hide="!loggedIn"><a href="/" ng-click="SignOut()">Sign Out</a></li>
+        <!--<li><a href="#training" id="nav-training">Training</a></li>-->
+        <!--<li><a href="#news" id="nav-news">News</a></li>-->
+    </ul>
+</div>
