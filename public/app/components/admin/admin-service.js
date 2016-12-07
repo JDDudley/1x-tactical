@@ -36,13 +36,14 @@ StoreData.service('AdminService', function ($http) {
         let eventObj = {
             "event": {
                 "name": event.name,
+                "category": "Event",
                 "date": event.date,
                 "time": event.time, 
                 "minSeat": event.minSeat,
                 "maxSeat": event.maxSeat,
                 "price": event.price,
                 "description": event.description,
-                "photos": event.image || [],
+                "images": event.image || [],
                 "deleted": false
             }
         }
