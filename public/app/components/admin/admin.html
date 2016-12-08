@@ -4,8 +4,14 @@
         <h2 class="text-center">Administrator Page</h2>
 
 
+<button class="btn-lg btn-primary" ng-click="showEventForm = !showEventForm"> Add An Event</button>
+<button class="btn-lg btn-primary" ng-click="showProductForm= !showProductForm"> Add A Product</button>
 
-        <!--Add Item To Store-->
+
+
+
+
+        <div ng-show="showProductForm">
         <h3>Arm Up</h3>
         <form ng-submit="$ctrl.addItem($ctrl.newItem)">
             <label >Product Name:</label>
@@ -41,7 +47,7 @@
 
             <label>Images</label>
             <div id="product-images">
-                <input class="form-control image-class" ng-model="$ctrl.newItem.image[0]" type="text" placeholder="Image Url   Include http:\\  before all images  ">
+                <input class="form-control image-class" ng-model="$ctrl.newItem.image[0]" type="text" placeholder="Image Url">
                 <input class="form-control image-class" ng-model="$ctrl.newItem.image[1]" type="text" placeholder="Image Url">
                 <input class="form-control image-class" ng-model="$ctrl.newItem.image[3]" type="text" placeholder="Image Url">
                 <input class="form-control image-class" ng-model="$ctrl.newItem.image[4]" type="text" placeholder="Image Url">
@@ -50,11 +56,15 @@
 
             <button type="submit" class="btn-primary">Submit</button>
         </form>
+        </div>
 
-        <!--Add Event to Events Page-->
-        <!--
-    Events will be a category and will have a uuid. 
--->
+    
+    
+    
+    
+
+        <div ng-show="showEventForm">
+
         <h3>Train Up</h3>
         <form ng-submit="$ctrl.addEvent($ctrl.newEvent)">
             <label>Event Name</label>
@@ -87,5 +97,12 @@
             <button type="submit" class="btn-primary" ng-click="$ctrl.addEvent($ctrl.newEvent)">Submit</button>
         </form>
     </div>
+
+
+
     <div class="hidden-xs col-sm-2 col-md-3 col-lg-4"></div>
+
+
+
+</div>
 </div>
