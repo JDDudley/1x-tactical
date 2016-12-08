@@ -29,6 +29,16 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
     background-attachment: fixed;
 }
+.banner-mindset {
+	background: rgba(0,0,0,0.6);
+	margin-top: 12px;
+	padding: 6px 10%;
+}
+.banner-mindset > p {
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1.2em;
+}
 .tagline-2 {
     line-height: 1.5em;
     margin-top: 10vh;
@@ -120,9 +130,17 @@ h1, h2, h3, h4, h5, h6 {
     color: indianred !important;
 }
 
-/*authorization styling*/
-
-
+/*events*/
+.event-card {
+	background-color:tan;
+	color: #000;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+.card-title {
+	color: #000 !important;
+}
 
 /*authorization styling*/
 
@@ -260,14 +278,6 @@ header[role=banner] .xtac-text a {
 	}
 }
 
-/*events*/
-.event-card {
-	background-color: #333;
-	border-color: #333;
-	padding: 10px;
-	margin-bottom: 20px;
-	border-radius: 10px;
-}
 /* --------------------------------
  *
  *xsigin/signup popup
