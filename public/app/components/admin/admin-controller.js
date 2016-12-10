@@ -6,6 +6,8 @@
             controller: AdminController
         })
 
+        AdminController.$inject=['AdminService']
+
     function AdminController(AdminService) {
         var ac = this;
         var as = AdminService;
