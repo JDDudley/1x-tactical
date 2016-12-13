@@ -78,7 +78,7 @@
                 memberPrice: product.memberPrice,
                 nonMemberPrice: product.nonMemberPrice
             }
-            this.cart.push(newProduct)
+            this.cart.push(newProduct);
         }
     }
 
