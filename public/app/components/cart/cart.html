@@ -39,13 +39,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <select ng-model="$ctrl.filterBy" style="color:black">
-            <option value="name" ng-selected>Name</option>
-            <!--<option value="brand">Brand</option>-->
-            <option value="category">Category</option>
-        </select>
-        <select ng-model="$ctrl.query[$ctrl.filterBy]" style="color:black">
-            <option value="" ng-selected>Empty</option>
+        <select ng-model="$ctrl.queryCat" style="color:black">
+            <option value="" ng-selected>Select Category</option>
             <option value="Hand Guns" ng-selected>Hand Guns</option>
             <option value="Shot Guns" ng-selected>Shot Guns</option>
             <option value="Rifles" ng-selected>Rifles</option>
@@ -60,16 +55,17 @@
             <option value="Camping and Survival" ng-selected>Camping and Survival</option>
             <option value="Cases and Bags" ng-selected>Cases and Bags</option>
         </select>
-        <input type="text" ng-model="$ctrl.query[$ctrl.filterBy]" style="color:black">
+        <input type="text" ng-model="$ctrl.query" style="color:black" placeholder="Product Name">
         <button class="btn-success" type="button">Search</button>
     </div>
+
     <div class="row">
         <div class="col-md-12">
 
-            <div ng-repeat="product in $ctrl.products | filter: $ctrl.query" class="col-sm-4">
+            <div ng-repeat="product in $ctrl.products | filter: $ctrl.query | filter: $ctrl.queryCat" class="col-sm-4">
                 <div class="shopping-product">
                     <div style="text-align:center">
-                    <img ng-src="{{product.images[0]}}" style="width:200px ">
+                        <img ng-src="{{product.images[0]}}" style="width:200px ">
                     </div>
                     <h3 class="product-name">{{product.name}}</h3>
                     <p class="product-name">{{product.description}}</p>
