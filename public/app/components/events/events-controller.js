@@ -6,8 +6,8 @@
             controller: EventsController
         })
 
-EventsController.$inject=['EventsService']
-    function EventsController(ES) {
+EventsController.$inject=['EventsService', 'CartController', 'CartService']
+    function EventsController(ES, CC, CS) {
         var ec = this;
         ec.events=[];
 
@@ -16,6 +16,9 @@ EventsController.$inject=['EventsService']
             ec.events=events.data
         });
         
+          ec.addToCart=(event)=>{
+            CC.addProductToCart(event)
+        }
     }
 
 })(); 
