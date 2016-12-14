@@ -6,19 +6,23 @@
             controller: AdminController
         })
 
+        AdminController.$inject=['AdminService']
+
     function AdminController(AdminService) {
         var ac = this;
         var as = AdminService;
         ac.imgId = 0;
   
+
         ac.addItem = (product) => {
-            debugger
             console.log(product)
             as.addProduct(product);
         }
 
         ac.addEvent = (event) => {
+            debugger 
             as.addEvent(event)
+            
         }
 
     }

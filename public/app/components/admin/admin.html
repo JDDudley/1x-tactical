@@ -3,17 +3,26 @@
     <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
         <h2 class="text-center">Administrator Page</h2>
 
+            <div class="col-xs-12 col-md-4">
+        <button class="btn-lg btn-primary" ng-click="showEventForm = !showEventForm"> Add An Event</button>
+        </div>
+        <div class="col-xs-12 col-md-4">
+        <button class="btn-lg btn-primary" ng-click="showProductForm= !showProductForm"> Add A Product</button>
+       </div>
+       <div class="col-xs-12 col-md-4">
+        <button class="btn-lg btn-primary" ng-click="showDiscountForm= !showDiscountForm"> Create a Discount</button>
+            </div>
 
 
-        <!--Add Item To Store-->
-        <h3>Arm Up</h3>
-        <form ng-submit="$ctrl.addItem($ctrl.newItem)">
-            <label >Product Name:</label>
-            <input class="form-control" ng-model="$ctrl.newItem.name" type="text" required>
-            <!--<label>Brand: </label>
+        <div ng-show="showProductForm">
+            <h3>Arm Up</h3>
+            <form ng-submit="$ctrl.addItem($ctrl.newItem)">
+                <label>Product Name:</label>
+                <input class="form-control" ng-model="$ctrl.newItem.name" type="text" required>
+                <!--<label>Brand: </label>
             <input class="form-control" ng-model="$ctrl.newItem.brand" type="text" placeholder="Brand">-->
-            <label for="sel1">Category:</label>
-            <select  class="form-control" id="sel1" ng-model="$ctrl.newItem.category">
+                <label for="sel1">Category:</label>
+                <select class="form-control"  ng-model="$ctrl.newItem.category" required>
                    <option value="Hand Guns">Hand Guns</option>
                    <option value="Shot Guns">Shot Guns</option>
                    <option value="Rifles">Rifles</option>
@@ -28,64 +37,76 @@
                    <option value="Camping and Survival">Camping and Survival</option>
                    <option value="Cases and Bags">Cases and Bags</option>
                 </select>
-            <label>Description</label>
-            <textarea class="form-control" ng-model="$ctrl.newItem.description" type="text" placeholder="Description"></textarea>
-            <!--<label>Specs (Separate by comma)</label>
+                <label>Description</label>
+                <textarea class="form-control" ng-model="$ctrl.newItem.description" type="text" placeholder="Description" required></textarea>
+                <!--<label>Specs (Separate by comma)</label>
             <input class="form-control" ng-model="$ctrl.newItem.specs" type="text" placeholder="Specs (separate with comma) ">-->
-            <label>MSRP</label >
+                <label>MSRP</label >
             <input  class="form-control" ng-model="$ctrl.newItem.msrp" type="text" placeholder="MSRP" required>
             <label>Non-Member Price</label>
-            <input class="form-control" ng-model="$ctrl.newItem.memberPrice" type="text" placeholder="Non-Member Price" required>
-            <label>Member Price</label>
-            <input class="form-control" ng-model="$ctrl.newItem.nonMemberPrice" type="text" placeholder="Member Price" required>
+                <input class="form-control" ng-model="$ctrl.newItem.memberPrice" type="text" placeholder="Non-Member Price" required>
+                <label>Member Price</label>
+                <input class="form-control" ng-model="$ctrl.newItem.nonMemberPrice" type="text" placeholder="Member Price" required>
+  <label>Images</label>
+                        <input class="form-control image-class" ng-model="$ctrl.newItem.image[0]" type="text" placeholder="Image Url">
+                        <input class="form-control image-class" ng-model="$ctrl.newItem.image[1]" type="text" placeholder="Image Url">
+                        <input class="form-control image-class" ng-model="$ctrl.newItem.image[3]" type="text" placeholder="Image Url">
+                        <input class="form-control image-class" ng-model="$ctrl.newItem.image[4]" type="text" placeholder="Image Url">
+                        <input class="form-control image-class" ng-model="$ctrl.newItem.image[5]" type="text" placeholder="Image Url">
 
-            <label>Images</label>
-            <div id="product-images">
-                <input class="form-control image-class" ng-model="$ctrl.newItem.image[0]" type="text" placeholder="Image Url   Include http:\\  before all images  ">
-                <input class="form-control image-class" ng-model="$ctrl.newItem.image[1]" type="text" placeholder="Image Url">
-                <input class="form-control image-class" ng-model="$ctrl.newItem.image[3]" type="text" placeholder="Image Url">
-                <input class="form-control image-class" ng-model="$ctrl.newItem.image[4]" type="text" placeholder="Image Url">
-                <input class="form-control image-class" ng-model="$ctrl.newItem.image[5]" type="text" placeholder="Image Url">
-            </div>
+                <button type="submit" class="btn-primary">Submit</button>
+            </form>
+        </div>
 
-            <button type="submit" class="btn-primary">Submit</button>
-        </form>
 
-        <!--Add Event to Events Page-->
-        <!--
-    Events will be a category and will have a uuid. 
--->
-        <h3>Train Up</h3>
-        <form ng-submit="$ctrl.addEvent($ctrl.newEvent)">
-            <label>Event Name</label>
-            <input class="form-control" ng-model="$ctrl.newEvent.name" type="text" placeholder="Event Name">
-            <label>Price</label>
-            <!--Member Price is 10% of Non-Member Price-->
-            <input class="form-control" ng-model="$ctrl.newEvent.price" type="text" placeholder="Price">
-            <label>Description</label>
-            <textarea class="form-control" ng-model="$ctrl.newEvent.description" type="text" placeholder="Description"></textarea>
-            <label>Date</label>
-            <input class="form-control" ng-model="$ctrl.newEvent.date" type="text" placeholder="MM/DD/YYYY">
-            <label>Time</label>
-            <input class="form-control" ng-model="$ctrl.newEvent.time" type="text" placeholder="HH:MM">
-            <label>Min Seats</label>
-            <input class="form-control" ng-model="$ctrl.newEvent.minSeat" type="text" placeholder="Min Seats">
-            <label>Max Seats</label>
-            <input class="form-control" ng-model="$ctrl.newEvent.maxSeat" type="text" placeholder="Max Seats">
-            <label>Images </label>
-            <div id="event-images">
 
-                
-                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[0]" type="text" placeholder="Image Url">
-                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[1]" type="text" placeholder="Image Url">
-                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[3]" type="text" placeholder="Image Url">
-                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[4]" type="text" placeholder="Image Url">
-                <input class="form-control image-class" ng-model="$ctrl.newEvent.image[5]" type="text" placeholder="Image Url">
 
-                </div>
 
-            <button type="submit" class="btn-primary" ng-click="$ctrl.addEvent($ctrl.newEvent)">Submit</button>
-        </form>
+
+        <div ng-show="showEventForm">
+
+            <h3>Train Up</h3>
+            <form ng-submit="$ctrl.addEvent($ctrl.newEvent)">
+                <label>Event Name</label>
+                <input class="form-control" ng-model="$ctrl.newEvent.name" type="text" placeholder="Event Name" required>
+                <label>Price</label>
+                <!--Member Price is 10% of Non-Member Price-->
+                <input class="form-control" ng-model="$ctrl.newEvent.price" type="text" placeholder="Price" required>
+                <label>Description</label>
+                <textarea class="form-control" ng-model="$ctrl.newEvent.description" type="text" placeholder="Description" required></textarea>
+                <label>Date</label>
+                <input class="form-control" ng-model="$ctrl.newEvent.date" type="text" placeholder="MM/DD/YYYY" required>
+                <label>Time</label>
+                <input class="form-control" ng-model="$ctrl.newEvent.time" type="text" placeholder="HH:MM" required>
+                <label>Min Seats</label>
+                <input class="form-control" ng-model="$ctrl.newEvent.minSeat" type="text" placeholder="Min Seats" required>
+                <label>Max Seats</label>
+                <input class="form-control" ng-model="$ctrl.newEvent.maxSeat" type="text" placeholder="Max Seats" required>
+                <label>Images</label>
+                        <input class="form-control image-class" ng-model="$ctrl.newEvent.image[0]" type="text" placeholder="Image Url">
+                        <input class="form-control image-class" ng-model="$ctrl.newEvent.image[1]" type="text" placeholder="Image Url">
+                        <input class="form-control image-class" ng-model="$ctrl.newEvent.image[3]" type="text" placeholder="Image Url">
+                        <input class="form-control image-class" ng-model="$ctrl.newEvent.image[4]" type="text" placeholder="Image Url">
+                        <input class="form-control image-class" ng-model="$ctrl.newEvent.image[5]" type="text" placeholder="Image Url">
+
+                <button type="submit" class="btn-primary" ng-click="$ctrl.addEvent($ctrl.newEvent)">Submit</button>
+            </form>
+        </div>
+
+
+
+        <div ng-show="showDiscountForm">
+            <h1>Save Up</h1>
+<!--<label>Discount </label>
+ <input class="form-control" ng-model="$ctrl.newDiscount.minSeat" type="text" placeholder="Min Seats">-->
+ <p>Discount Creater Coming Soon</p>
+        </div>
+
+
+
+        <div class="hidden-xs col-sm-2 col-md-3 col-lg-4"></div>
+
+
+
     </div>
-    <div class="hidden-xs col-sm-2 col-md-3 col-lg-4"></div>
 </div>
