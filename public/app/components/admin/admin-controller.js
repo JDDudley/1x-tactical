@@ -22,6 +22,7 @@
         ac.addEvent = (event) => {
             debugger 
             as.addEvent(event)
+            
         }
 
     }

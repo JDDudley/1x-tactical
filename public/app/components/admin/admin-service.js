@@ -50,12 +50,12 @@
             }
 
             console.log(eventObj)
-            let message = " You Successfully Posted the Event " + event.name + " to the event page.";
+            console.log(eventObj.event.category)
             $http.post(eventUrl, eventObj)
                 .success(function (data) {
-                    alert("successfully posted the event " + eventObj.name + " to the event page")
+                    alert("successfully posted the event " + eventObj.event.name + " to the event page")
                 }).error(function (data) {
-                    alert(eventObj.name + " was NOT added to the event page. Make sure you filled out all required fields.")
+                    alert(eventObj.event.name + " was NOT added to the event page. Make sure you filled out all required fields.")
                 })
         }
 

@@ -1,7 +1,7 @@
 var StoreData = angular.module('1x');
 StoreData.service('EventsService', function ($http) {
 
-    let url = 'http://localhost:8080/api/events'
+    let url = '/api/events'
     let es = this;
 
     es.getEvents=(cb)=>{
