@@ -15,6 +15,7 @@
   
 
         ac.addItem = (product) => {
+            debugger 
             console.log(product)
             as.addProduct(product);
         }
