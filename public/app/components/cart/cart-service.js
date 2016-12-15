@@ -8,4 +8,6 @@ StoreData.service('CartService', function($http) {
             url: 'http://localhost:8080/api/store'
         }).then(cb).catch(cb)
     }
+
+    
 })
