@@ -17,14 +17,12 @@
         });
 
         ec.addToCart = (event) => {
-            debugger
             console.log(event)
             CS.addToCart(event)
             console.log('adding event to cart..')
         }
 
     ec.removeFromCart=(id)=>{
-        debugger 
         CS.removeFromCart(id)
         console.log(event.name + " has been removed from your shopping cart.")
     }
