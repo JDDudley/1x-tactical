@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 	background: rgba(0,0,0,0.6);
 	margin-top: 12px;
 	padding: 6px 10%;
+	text-align: left;
 }
 .banner-mindset > p {
 	font-size: 1.2em;
