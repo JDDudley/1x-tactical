@@ -44,9 +44,4 @@ CartData.service('CheckoutService', function ($http) {
         //logic
     }
 
-
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> admin
