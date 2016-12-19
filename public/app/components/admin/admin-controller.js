@@ -23,7 +23,11 @@
         ac.addEvent = (event) => {
             debugger 
             as.addEvent(event)
-            
+        }
+
+        ac.addDiscount=(discount)=>{
+            debugger 
+            as.addDiscount(discount)
         }
 
     }
