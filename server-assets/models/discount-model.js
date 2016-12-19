@@ -9,21 +9,21 @@ const dataAdapter = require('../models/data-adapter'),
 
 let Discount = DS.defineResource({
     name: 'discount',
-    endpoint: 'discount',
-    relations: {
-        belongsTo: {
-            product:{
-                localField: 'product',
-                localKey: 'productId'
-            }
-        }
-    }
+    endpoint: 'discount'
+    // relations: {
+    //     belongsTo: {
+    //         product:{
+    //             localField: 'product',
+    //             localKey: 'productId'
+    //         }
+    //     }
+    // }
 })
 
 newDiscount = (discount)=>{
    return{  //when using, wrap discount obj in "discount" property
     id: discount.id || uuid.v4(),  //might as well give the coupons an id   
-    code: cc.generate(), //will generate 3-part new code. 
+    // code: cc.generate(), //will generate 3-part new code. 
     percentageOff: discount.percentageOff, //percent off
     product: discount.product, //product/category/brand to be discounted ...(will most likely need id's for products and categories. YOLO )
     activeCode: true     //keep track of all codes but change to false when this is no longer active. 
