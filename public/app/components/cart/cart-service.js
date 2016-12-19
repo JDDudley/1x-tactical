@@ -5,7 +5,7 @@ StoreData.service('CartService', function($http) {
     sd.getAll = (cb) => {
         $http({
             method: 'GET',
-            url: 'http://localhost:8080/api/store'
+            url: '/api/store'
         }).then(cb).catch(cb)
     }
 })

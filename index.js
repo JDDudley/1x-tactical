@@ -4,6 +4,7 @@ let express = require('express')
 ,routes=require('./server-assets/routes/index')
 ,handlers = require('./utils/handler')
 ,server = express()
+,firebase = require('firebase')
 ,port = process.env.PORT || 8080
 
 
