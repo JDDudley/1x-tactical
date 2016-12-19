@@ -45,4 +45,8 @@ CartData.service('CheckoutService', function ($http) {
     }
 
 
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> admin
