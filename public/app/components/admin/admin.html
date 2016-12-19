@@ -1,21 +1,24 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
 <div class="row full-height">
     <div class="hidden-xs col-sm-2 col-md-3 col-lg-4"></div>
     <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
         <h2 class="text-center">Administrator Page</h2>
 
             <div class="col-xs-12 col-md-4">
-        <button class="btn-lg btn-primary" ng-click="showEventForm = !showEventForm"> Add An Event</button>
+        <button type="button" class="btn-lg btn-primary" ng-click="showEventForm = !showEventForm"> Add An Event</button>
         </div>
         <div class="col-xs-12 col-md-4">
-        <button class="btn-lg btn-primary" ng-click="showProductForm= !showProductForm"> Add A Product</button>
+        <button type="button" class="btn-lg btn-primary" ng-click="showProductForm= !showProductForm"> Add A Product</button>
        </div>
        <div class="col-xs-12 col-md-4">
-        <button class="btn-lg btn-primary" ng-click="showDiscountForm= !showDiscountForm"> Create a Discount</button>
+        <button type="button" class="btn-lg btn-primary" ng-click="showDiscountForm= !showDiscountForm"> Create a Discount</button>
             </div>
 
 
         <div ng-show="showProductForm">
             <h3>Arm Up</h3>
+            <i ng-click="showProductForm=!showProductForm" class="material-icons">close</i>
             <form ng-submit="$ctrl.addItem($ctrl.newItem)">
                 <label>Product Name:</label>
                 <input class="form-control" ng-model="$ctrl.newItem.name" type="text" required>
@@ -54,7 +57,8 @@
                         <input class="form-control image-class" ng-model="$ctrl.newItem.image[4]" type="text" placeholder="Image Url">
                         <input class="form-control image-class" ng-model="$ctrl.newItem.image[5]" type="text" placeholder="Image Url">
 
-                <button type="submit" class="btn-primary">Submit</button>
+                <button type="reset" class="btn-primary"> Resest Form</button>
+                <button type="button" class="btn-primary" ng-click="$ctrl.addItem($ctrl.newItem)">Submit</button>
             </form>
         </div>
 
@@ -66,6 +70,9 @@
         <div ng-show="showEventForm">
 
             <h3>Train Up</h3>
+
+                        <i ng-click="showEventForm=!showEventForm" class="material-icons">close</i>
+
             <form ng-submit="$ctrl.addEvent($ctrl.newEvent)">
                 <label>Event Name</label>
                 <input class="form-control" ng-model="$ctrl.newEvent.name" type="text" placeholder="Event Name" required>
@@ -88,15 +95,17 @@
                         <input class="form-control image-class" ng-model="$ctrl.newEvent.image[3]" type="text" placeholder="Image Url">
                         <input class="form-control image-class" ng-model="$ctrl.newEvent.image[4]" type="text" placeholder="Image Url">
                         <input class="form-control image-class" ng-model="$ctrl.newEvent.image[5]" type="text" placeholder="Image Url">
-
-                <button type="submit" class="btn-primary" ng-click="$ctrl.addEvent($ctrl.newEvent)">Submit</button>
+                <button type="reset" class="btn-primary">Reset Form</button>
+                <button type="button" class="btn-primary" ng-click="$ctrl.addEvent($ctrl.newEvent)">Submit</button>
             </form>
         </div>
 
 
 
         <div ng-show="showDiscountForm">
-            <h1>Save Up</h1>
+            <h1>Save Up</h1>            <i ng-click="showDiscountForm=!showDiscountForm" class="material-icons">close</i>
+
+
 <!--<label>Discount </label>
  <input class="form-control" ng-model="$ctrl.newDiscount.minSeat" type="text" placeholder="Min Seats">-->
  <p>Discount Creater Coming Soon</p>

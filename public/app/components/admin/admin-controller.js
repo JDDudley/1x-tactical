@@ -15,12 +15,13 @@
   
 
         ac.addItem = (product) => {
+             
             console.log(product)
             as.addProduct(product);
         }
 
         ac.addEvent = (event) => {
-            debugger 
+             
             as.addEvent(event)
             
         }

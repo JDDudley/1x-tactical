@@ -1,7 +1,7 @@
 (() => {
 
     var StoreData = angular.module('1x');
-    StoreData.service('AdminService', function($http) {
+    StoreData.service('AdminService', function ($http) {
 
         let storeUrl = '/api/store'
         let eventUrl = '/api/events'
@@ -23,13 +23,15 @@
                 }
             }
 
-            !product.category ? alert("Your Product Doesn't Have a Category. It cannot be posted to the store without a category") :
-
+            !product.category ? alert("Your Product Doesn't Have a Category. It cannot be posted to the store without a category")
+                :
                 $http.post(storeUrl, productObj)
-                    .success(function(data) {
-                        alert(" You Successfully Posted the Product " + product.name + "  to the store.")
-                    }).error(function(data) {
-                        alert("error in posting")
+                    .success(function (data) {
+                        console.log(data)
+                        data.error? 
+                        alert("Could not add " + productObj.product.name  + " to the Store. Make sure you are filling out all required fields. ")
+                                    : 
+                        alert(" You Successfully Posted the Product " + productObj.product.name + "  to the store.")
                     })
         }
 
@@ -48,17 +50,16 @@
                     "deleted": false
                 }
             }
-
             console.log(eventObj)
             console.log(eventObj.event.category)
             $http.post(eventUrl, eventObj)
-                .success(function(data) {
-                    alert("successfully posted the event " + eventObj.event.name + " to the event page")
-                }).error(function(data) {
-                    alert(eventObj.event.name + " was NOT added to the event page. Make sure you filled out all required fields.")
+                .success(function (data) {
+                    console.log(data)
+                    data.error ?
+                        alert("could not add " + eventObj.event.name + " to the Event Page. Make sure all required fields are filled out.")
+                        : alert("successfully posted the event " + eventObj.event.name + " to the event page")
                 })
         }
-
     })
 
 })();
