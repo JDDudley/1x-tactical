@@ -6,10 +6,9 @@
             controller: CartController
         })
 
-    CartController.$inject = ['CartService']
+    CartController.$inject = ['CartService']    
 
     function CartController(CartService) {
-        // debugger
 
         this.cartStatus = 'Working'
 
@@ -68,6 +67,7 @@
         }
 
         this.addProductToCart = function (product) {
+            debugger
             var newProduct = {
                 quantity: 1,
                 name: product.name,
