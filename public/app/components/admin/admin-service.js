@@ -5,6 +5,7 @@
 
         let storeUrl = '/api/store'
         let eventUrl = '/api/events'
+        let discountUrl= '/api/discount';
         let as = this;
 
         as.addProduct = (product) => {
@@ -58,6 +59,28 @@
                     data.error ?
                         alert("could not add " + eventObj.event.name + " to the Event Page. Make sure all required fields are filled out.")
                         : alert("successfully posted the event " + eventObj.event.name + " to the event page")
+                })
+        }
+
+
+
+         as.addDiscount = (discount) => {
+    let percent = discount.percentageOff*0.01;
+            let discountObj = {
+                // "discount": {
+                    "id": discount.id,
+                    "percentageoff": percent,
+                    "product": discount.product,
+                    "activeCode": true
+                // }
+            }
+            console.log(discountObj)
+                $http.post(discountUrl, discountObj)
+                .success(function (data) {
+                    console.log(data)
+                    data.error ?
+                        alert("could not add " + discountObj.id + " to the Discount Database. Make sure all required fields are filled out.")
+                        : alert("successfully posted the event " + discountObj.id + " to the event page")
                 })
         }
     })

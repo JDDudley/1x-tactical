@@ -44,5 +44,4 @@ CartData.service('CheckoutService', function ($http) {
         //logic
     }
 
-
 })

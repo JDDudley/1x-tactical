@@ -10,7 +10,7 @@
     "node": "^7",
     "npm": "^3"
   },
-  "author": "Jason Dudley, Michael Wolf Hoffman, Chad Rohrsir, Clint Madariaga, Nate",
+  "author": "Jason Dudley, Michael Wolf Hoffman, Chad Rohr, Clint Madariaga, Nate",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",

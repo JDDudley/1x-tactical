@@ -8,7 +8,7 @@ router.route('/:id?')
    .get((req, res, next)=>{ 
             Discount.getAll((data)=>{  data.stack ? next(data) : res.send(data) }) })
     .post((req, res, next)=>{
-            Discount.createDiscount(req.body.discount, (discount)=>{
+            Discount.createDiscount(req.body, (discount)=>{
             discount.stack? next(discount) :   res.send(discount)  })    })
     .put((req, res, next) =>{
              Discount.updateDiscount(req.params.id, req.body.discount, (discount)=>{
