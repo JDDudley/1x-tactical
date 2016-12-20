@@ -1,11 +1,15 @@
 var StoreData = angular.module('1x');
-StoreData.service('ArmoryService', function($http) {
+StoreData.service('ArmoryService', function ($http) {
 
+    let url = '/api/store'
     let as = this;
-    as.getAll = (cb) => {
-        $http({
-            method: 'GET',
-            url: '/api/store'
-        }).then(cb).catch(cb)
+
+    as.getAll=(cb)=>{
+        $http.get(url)
+           .then(function(res){
+              cb(res)
+           },function(err){
+             console.log(err)
+             })
     }
 })
