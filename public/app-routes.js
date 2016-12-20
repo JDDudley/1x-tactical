@@ -48,17 +48,5 @@
                     url: '/events',
                     template: '<events></events>'
                 })
-                // .state('auth', {
-				// 	abstract: true,
-				// 	template: '<ui-view></ui-view>',
-				// 	resolve: {
-				// 		isAuthed: function(AuthService, $state){
-				// 		//^^^ The authService and $state attributes are injected just like they would be for a controller  
-				// 			if(!AuthService.getAuth()){
-				// 				return $state.go('home')
-				// 			}
-				// 		}
-				// 	}
-				// })
         })
 })(); 
