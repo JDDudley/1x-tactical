@@ -8,19 +8,4 @@ StoreData.service('CartService', function($http) {
             url: 'http://localhost:8080/api/store'
         }).then(cb).catch(cb)
     }
-    sd.saveCart = function () {
-        localStorage.setItem('cart', JSON.stringify(cart))
-        console.log('item saved to cart')
-
-    }
-
-    sd.getCart = function () {
-        var cartData = localStorage.getItem('cart');
-        if (cartData) {
-            console.log(JSON.parse(cartData))
-            return JSON.parse(cartData)
-            
-        }
-            return [];
-    }
 })

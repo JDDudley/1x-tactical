@@ -6,9 +6,9 @@
             controller: CartController
         })
 
-    CartController.$inject = ['CartService']
+    CartController.$inject = ['CartService', 'CheckoutService']
 
-    function CartController(CartService) {
+    function CartController(CartService, CheckoutService) {
         // debugger
 
         this.cartStatus = 'Working'
@@ -64,8 +64,8 @@
                     this.cart.splice(i, 1)
                 }
             }
-            CartService.saveCart
-            CartService.getCart
+            CheckoutService.saveCart
+            CheckoutService.getCart
             return this.cart
         }
 
@@ -81,8 +81,8 @@
                 nonMemberPrice: product.nonMemberPrice
             }
             this.cart.push(newProduct);
-            CartService.saveCart
-            CartService.getCart
+            CheckoutService.saveCart
+            CheckoutService.getCart
             debugger
         }
     }
