@@ -1,12 +1,60 @@
-  <!--------------------------------------------armory-->
-        <div class="row section-armory full-height" id="armory">
-            <div class="col-xs-12">
-                <h2 class="section-header">The Armory</h2>
-                <h2 style="text-align: center;">COMING SOON!</h2>
-                <p>1X Tactical Team Members receive discount pricing on quality, brand-name products within the shooting, tactical,
-                    camping and survival industry.</p>
-            </div>
-            <div class="col-xs-12 supplier-list">	
+<!--------------------------------------------armory-->
+<div class="row section-armory full-height" id="armory">
+	<div class="col-xs-12">
+		<h2 class="section-header">The Armory</h2>
+		<h2 style="text-align: center;">COMING SOON!</h2>
+<p>1X Tactical Team Members receive discount pricing on quality, brand-name products within the shooting, tactical, camping
+	and survival industry.</p>
+</div>
+<div class="container-fluid">
+	<div class="row" style="color:black">
+<select ng-model="$ctrl.queryCat">
+            <option value="" ng-selected>Select Category</option>
+            <option value="Hand Guns" ng-selected>Hand Guns</option>
+            <option value="Shot Guns" ng-selected>Shot Guns</option>
+            <option value="Rifles" ng-selected>Rifles</option>
+            <option value="Ammo" ng-selected>Ammo</option>
+            <option value="Tactical Gear" ng-selected>Tactical Gear</option>
+            <option value="Hunting" ng-selected>Hunting</option>
+            <option value="Prepping" ng-selected>Prepping</option>
+            <option value="Knives and Tools" ng-selected>Knives and Tools</option>
+            <option value="Apparel" ng-selected>Apparel</option>
+            <option value="Optics" ng-selected>Optics</option>
+            <option value="Accessories" ng-selected>Accessories</option>
+            <option value="Camping and Survival" ng-selected>Camping and Survival</option>
+            <option value="Cases and Bags" ng-selected>Cases and Bags</option>
+        </select>
+<!--<select ng-model="$ctrl.filterPrice">
+            <option value="">Price</option>
+            <option value="memberPrice">Lowest-Highest</option>
+            <option value="-memberPrice">Highest-Lowest</option>
+        </select>-->
+<input type="text" ng-model="$ctrl.query" placeholder="Product Name">
+<button class="btn-success" type="button">Search</button>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+
+		<div ng-repeat="product in $ctrl.products | filter: $ctrl.query | filter: $ctrl.queryCat | orderBy: $ctrl.filterPrice" class="col-sm-4">
+			<div class="shopping-product">
+				<div style="text-align:center">
+<img ng-src="{{product.images[0]}}" style="width:200px ">
+</div>
+<h3 class="product-name">{{product.name}}</h3>
+<p class="product-name">{{product.description}}</p>
+<p class="product-price">MSRP: {{product.msrp | currency}}</p>
+<p class="product-price">Members: {{product.memberPrice | currency}}</p>
+<p class="product-price">Non-Members {{product.nonMemberPrice | currency}}</p>
+<p class="product-price">Members Save: {{(product.msrp-product.memberPrice)/product.msrp*100 | number : 0}}%</p>
+<button class="btn btn-xs btn-primary" ng-click="$ctrl.addProductToCart(product)">Add</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--<div class="col-xs-12 supplier-list">	
 				<div class="col-xs-6 col-sm-4 col-md-3col-lg-2">
 					<img class="supplier-img" src="suppliers/1791.jpg">
                 </div>
@@ -229,5 +277,4 @@
 				<div class="col-xs-6 col-sm-4 col-md-3col-lg-2">
 					<img class="supplier-img" src="suppliers/zubin_axe.jpg">
 				</div>
-            </div>
-        </div>
+            </div>-->

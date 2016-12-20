@@ -82,8 +82,8 @@
                 nonMemberPrice: product.nonMemberPrice
             }
             this.cart.push(newProduct);
-            CheckoutService.saveCart
-            CheckoutService.getCart
+            CheckoutService.saveCart()
+            CheckoutService.getCart()
             debugger
         }
     }

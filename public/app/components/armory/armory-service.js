@@ -1,8 +1,8 @@
 var StoreData = angular.module('1x');
-StoreData.service('CartService', function($http) {
+StoreData.service('ArmoryService', function($http) {
 
-    let sd = this;
-    sd.getAll = (cb) => {
+    let as = this;
+    as.getAll = (cb) => {
         $http({
             method: 'GET',
             url: '/api/store'
