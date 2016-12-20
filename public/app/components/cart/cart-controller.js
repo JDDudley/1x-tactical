@@ -70,6 +70,7 @@
         }
 
         this.addProductToCart = function (product) {
+            debugger
             var newProduct = {
                 quantity: 1,
                 name: product.name,
