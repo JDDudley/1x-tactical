@@ -63,6 +63,8 @@
                     this.cart.splice(i, 1)
                 }
             }
+            CartService.saveCart
+            CartService.getCart
             return this.cart
         }
 
@@ -79,6 +81,9 @@
                 nonMemberPrice: product.nonMemberPrice
             }
             this.cart.push(newProduct);
+            CartService.saveCart
+            CartService.getCart
+            debugger
         }
     }
 
