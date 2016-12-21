@@ -65,11 +65,12 @@
 
 
          as.addDiscount = (discount) => {
-    let percent = discount.percentageOff*0.01;
+    var percent = discount.percentageOff*0.01;
+    var code = discount.id.toUpperCase(); 
             let discountObj = {
                 // "discount": {
-                    "id": discount.id,
-                    "percentageoff": percent,
+                    "id": code,
+                    "percentageOff": percent,
                     "product": discount.product,
                     "activeCode": true
                 // }
@@ -77,12 +78,10 @@
             console.log(discountObj)
                 $http.post(discountUrl, discountObj)
                 .success(function (data) {
-                    console.log(data)
                     data.error ?
                         alert("could not add " + discountObj.id + " to the Discount Database. Make sure all required fields are filled out.")
                         : alert("successfully posted the event " + discountObj.id + " to the event page")
                 })
         }
     })
-
 })();

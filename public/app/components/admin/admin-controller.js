@@ -12,7 +12,6 @@
         var ac = this;
         var as = AdminService;
         ac.imgId = 0;
-  
 
         ac.addItem = (product) => {
             debugger 
