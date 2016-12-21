@@ -41,7 +41,7 @@
         </ul>
 
         <div class="x-login" ng-class="{'is-selected': nc.activeView.indexOf('i') > -1}">
-            <form class="x-form" ng-submit="nc.activeView == 'register' ? nc.register(nc.auth) : nc.login('email', nc.auth)">
+            <form class="x-form" ng-submit="nc.activeView == 'register' ? nc.register(nc.auth) : nc.login(nc.auth)">
                 <p class="fieldset" ng-if="nc.activeView == 'register'">
                     <label class="image-replace x-username" for="signup-username">Name</label>
                     <input class="full-width has-padding has-border" ng-model="nc.auth.displayname" type="text" placeholder="Username">

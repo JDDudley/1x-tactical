@@ -5,7 +5,9 @@ angular.module('1x')
     controllerAs: 'nc'
   });
 
-function navCtrl() {
+navCtrl.$inject = ['AuthService', '$scope']
+
+function navCtrl(AuthService, $scope) {
   let $ctrl = this
   
   $ctrl.activeView = null;
@@ -21,22 +23,22 @@ function navCtrl() {
   }
 
   $ctrl.$onInit = () => {
-    // authStore.on('USER', updateUser)
+    AuthService.on('USER', updateUser)
   }
 
-  this.login = (providerString, credentials) => {
-    // authStore.login(providerString, credentials)
+  this.login = (credentials) => {
+    AuthService.login(credentials)
   }
 
   this.logout = () => {
-    // authStore.logout()
+    AuthService.logout()
   }
 
   this.register = (credentials) => {
-    // authStore.register(credentials)
+    AuthService.register(credentials)
   }
 
   let update = () => {
-    // $scope.$evalAsync()
+    $scope.$evalAsync()
   }
 }
