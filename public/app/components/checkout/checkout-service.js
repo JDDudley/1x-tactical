@@ -20,7 +20,7 @@ CartData.service('CheckoutService', function ($http) {
         })
         cs.saveCart();
         cs.getCart();
-    
+
     }
 
 
@@ -35,9 +35,9 @@ CartData.service('CheckoutService', function ($http) {
         if (cartData) {
             console.log(JSON.parse(cartData))
             return JSON.parse(cartData)
-            
+
         }
-            return [];
+        return [];
     }
 
     cs.checkout = function () {

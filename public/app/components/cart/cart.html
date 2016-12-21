@@ -16,23 +16,23 @@
                 <td>{{product.name}}</td>
                 <td>
                     <select ng-model="product.quantity" ng-options="o as o for o in [1,2,3,4,5,6,7,8,9,10]" style="color: black"></select>
-</td>
-<td>{{product.msrp * product.quantity || product.price * product.quantity | currency}}</td>
-<td>{{product.memberPrice * product.quantity || (product.price * product.quantity) * 0.9  | currency}}</td>
-<td>{{product.nonMemberPrice * product.quantity || product.price * product.quantity | currency}}</td>
-<td>
-    <button class="btn btn-xs btn-warning" ng-click="$ctrl.removeProductFromCart(product)">X</button>
-</td>
-</tr>
-</tbody>
-<tfoot>
-    <tr>
-        <td></td>
-        <td class="text-right">Total</td>
-        <td>{{$ctrl.calculateMsrp() | currency}}</td>
-        <td>{{$ctrl.calculateMembers() | currency}}</td>
-        <td>{{$ctrl.calculateNonMembers() | currency}}</td>
-    </tr>
-</tfoot>
-</table>
+                </td>
+                <td>{{product.msrp * product.quantity || product.price * product.quantity | currency}}</td>
+                <td>{{product.memberPrice * product.quantity || (product.price * product.quantity) * 0.9 | currency}}</td>
+                <td>{{product.nonMemberPrice * product.quantity || product.price * product.quantity | currency}}</td>
+                <td>
+                    <button class="btn btn-xs btn-warning" ng-click="$ctrl.removeProductFromCart(product)">X</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td class="text-right">Total</td>
+                <td>{{$ctrl.calculateMsrp() | currency}}</td>
+                <td>{{$ctrl.calculateMembers() | currency}}</td>
+                <td>{{$ctrl.calculateNonMembers() | currency}}</td>
+            </tr>
+        </tfoot>
+    </table>
 </div>
