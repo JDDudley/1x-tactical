@@ -8,6 +8,9 @@
         let discountUrl= '/api/discount';
         let as = this;
 
+
+
+
         as.addProduct = (product) => {
             let productObj = {
                 "product": {

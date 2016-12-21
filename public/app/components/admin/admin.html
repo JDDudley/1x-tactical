@@ -16,7 +16,7 @@
         </div>
 
 
-<!--Add Product Form-->
+        <!--Add Product Form-->
         <div ng-show="showProductForm">
             <i ng-click="showProductForm=!showProductForm" class="material-icons">close</i>
             <form ng-submit="$ctrl.addItem($ctrl.newItem)">
@@ -66,7 +66,7 @@
 
 
 
-<!--Add Event Form-->
+        <!--Add Event Form-->
         <div ng-show="showEventForm">
             <i ng-click="showEventForm=!showEventForm" class="material-icons">close</i>
             <form ng-submit="$ctrl.addEvent($ctrl.newEvent)">
@@ -97,7 +97,7 @@
         </div>
 
 
-<!--Add Discount Form-->
+        <!--Add Discount Form-->
         <div ng-show="showDiscountForm">
             <h1>Save Up</h1>
             <i ng-click="showDiscountForm=!showDiscountForm" class="material-icons">close</i>
@@ -105,12 +105,18 @@
                 <label>Discount Code</label>
                 <input class="form-control" ng-model="$ctrl.newDiscount.id" type="text" placeholder="Discount Code" required>
                 <label>Percent Off</label>
-                <input class="form-control" ng-model="$ctrl.newDiscount.percentageOff" type="text" placeholder="Percent Off (Don't include % sign)')" required>
+                <input class="form-control" ng-model="$ctrl.newDiscount.percentageOff" type="text" placeholder="Percent Off (Don't include % sign)')"
+                    required>
                 <label>Product</label>
                 <!--WORK WITH NG-REPEAT TO PULL PRODUCTS-->
-                <!--<select class="form-control" ng-model="$ctrl.newDiscount.product" required>
-                <option value="Hand Guns">Hand Guns</option>-->
-                <input class="form-control" ng-model="$ctrl.newDiscount.product" type="text" placeholder="Product" required>
+                <select class="form-control" ng-model="$ctrl.newDiscount.product" required>
+                <option 
+                    ng-repeat="product in $ctrl.allProducts" 
+                    value={{product.product.name}}>
+                {{product.name}}
+                </option>
+                </select>
+                <!--<input class="form-control" ng-model="$ctrl.newDiscount.product" type="text" placeholder="Product" required>-->
                 <button type="reset" type="button" class="btn-primary">Reset Form</button>
                 <button type="button" class="btn-primary" ng-click="$ctrl.addDiscount($ctrl.newDiscount)">Submit</button>
             </form>
