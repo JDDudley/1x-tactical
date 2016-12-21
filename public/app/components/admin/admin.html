@@ -107,6 +107,9 @@
                 <label>Percent Off</label>
                 <input class="form-control" ng-model="$ctrl.newDiscount.percentageOff" type="text" placeholder="Percent Off (Don't include % sign)')" required>
                 <label>Product</label>
+                <!--WORK WITH NG-REPEAT TO PULL PRODUCTS-->
+                <!--<select class="form-control" ng-model="$ctrl.newDiscount.product" required>
+                <option value="Hand Guns">Hand Guns</option>-->
                 <input class="form-control" ng-model="$ctrl.newDiscount.product" type="text" placeholder="Product" required>
                 <button type="reset" type="button" class="btn-primary">Reset Form</button>
                 <button type="button" class="btn-primary" ng-click="$ctrl.addDiscount($ctrl.newDiscount)">Submit</button>
