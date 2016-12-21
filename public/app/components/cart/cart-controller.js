@@ -23,8 +23,9 @@
             return this.products
         })
 
-
         this.name = 'My Cart'
+        
+        CheckoutService.getCart()
 
         this.getCartCount = function () {
             return this.cart.length
@@ -57,35 +58,35 @@
             return sum
         }
 
-        this.removeProductFromCart = function (product) {
-            for (var i = 0; i < this.cart.length; i++) {
-                var productToDrop = this.cart[i];
-                if (productToDrop == product) {
-                    this.cart.splice(i, 1)
-                }
-            }
-            CheckoutService.saveCart
-            CheckoutService.getCart
-            return this.cart
-        }
+        // this.removeProductFromCart = function (product) {
+        //     for (var i = 0; i < this.cart.length; i++) {
+        //         var productToDrop = this.cart[i];
+        //         if (productToDrop == product) {
+        //             this.cart.splice(i, 1)
+        //         }
+        //     }
+        //     CheckoutService.saveCart
+        //     CheckoutService.getCart
+        //     return this.cart
+        // }
 
-        this.addProductToCart = function (product) {
-            debugger
-            var newProduct = {
-                quantity: 1,
-                name: product.name,
-                description: product.description,
-                specs: product.specs,
-                reviews: product.reviews,
-                msrp: product.msrp,
-                memberPrice: product.memberPrice,
-                nonMemberPrice: product.nonMemberPrice
-            }
-            this.cart.push(newProduct);
-            CheckoutService.saveCart()
-            CheckoutService.getCart()
-            debugger
-        }
+        // this.addProductToCart = function (product) {
+        //     debugger
+        //     var newProduct = {
+        //         quantity: 1,
+        //         name: product.name,
+        //         description: product.description,
+        //         specs: product.specs,
+        //         reviews: product.reviews,
+        //         msrp: product.msrp,
+        //         memberPrice: product.memberPrice,
+        //         nonMemberPrice: product.nonMemberPrice
+        //     }
+        //     this.cart.push(newProduct);
+        //     CheckoutService.saveCart()
+        //     CheckoutService.getCart()
+        //     debugger
+        // }
     }
 
 } ());

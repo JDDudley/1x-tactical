@@ -47,7 +47,8 @@
 <p class="product-price">Members: {{product.memberPrice | currency}}</p>
 <p class="product-price">Non-Members {{product.nonMemberPrice | currency}}</p>
 <p class="product-price">Members Save: {{(product.msrp-product.memberPrice)/product.msrp*100 | number : 0}}%</p>
-<button class="btn btn-xs btn-primary" ng-click="$ctrl.addProductToCart(product)">Add</button>
+<button ng-hide="showAdd" type="button" class="btn btn-xs btn-primary" ng-click="$ctrl.addToCart(product); showAdd=!showAdd">Add to Cart</button>
+<button ng-show="showAdd" id="product.id" type="button" class"btn btn-xs btn-primary" ng-click="$ctrl.removeFromCart(product.id); showAdd=!showAdd">Remove from Cart</button>
 </div>
 </div>
 </div>
