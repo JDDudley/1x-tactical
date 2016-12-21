@@ -19,6 +19,7 @@
         ac.addToCart = (product) => {
             console.log(product)
             CS.addToCart(product)
+            product.quantity ++
             console.log('adding product to cart..')
         }
 

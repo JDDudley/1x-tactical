@@ -9,23 +9,21 @@
     CartController.$inject = ['CartService', 'CheckoutService']
 
     function CartController(CartService, CheckoutService) {
-        // debugger
+        debugger
 
         this.cartStatus = 'Working'
 
-        this.cart = []
+               
 
         this.products = []
 
-        this.store = CartService.getAll((products) => {
+        this.cart = CartService.getCart((products) => {
             console.log(products.data[0].msrp)
             this.products = products.data
             return this.products
         })
 
         this.name = 'My Cart'
-        
-        CheckoutService.getCart()
 
         this.getCartCount = function () {
             return this.cart.length
