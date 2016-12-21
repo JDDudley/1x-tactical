@@ -130,10 +130,10 @@ angular.module('1x')
 function navCtrl() {
     let $ctrl = this
 
-    // $ctrl.activeView = null;
+    $ctrl.activeView = null;
 
     $ctrl.logIn = function() {
-        // $ctrl.activeView = 'login';
+        $ctrl.activeView = 'login';
     }
 
     let updateUser = (user) => {
