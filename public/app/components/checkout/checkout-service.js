@@ -20,14 +20,12 @@ CartData.service('CheckoutService', function ($http) {
         })
         cs.saveCart();
         cs.getCart();
-
     }
 
 
     cs.saveCart = function () {
         localStorage.setItem('cart', JSON.stringify(cart))
         console.log('item saved to cart')
-
     }
 
     cs.getCart = function () {

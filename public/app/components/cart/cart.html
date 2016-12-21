@@ -21,7 +21,7 @@
                 <td>{{product.memberPrice * product.quantity || (product.price * product.quantity) * 0.9 | currency}}</td>
                 <td>{{product.nonMemberPrice * product.quantity || product.price * product.quantity | currency}}</td>
                 <td>
-                    <button class="btn btn-xs btn-warning" ng-click="$ctrl.removeProductFromCart(product)">X</button>
+                    <button class="btn btn-xs btn-warning" ng-click="$ctrl.removeFromCart()">X</button>
                 </td>
             </tr>
         </tbody>

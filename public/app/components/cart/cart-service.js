@@ -11,4 +11,8 @@ StoreData.service('CartService', function($http) {
         }
             return [];
     }
+    sd.saveCart = function () {
+        localStorage.setItem('cart', JSON.stringify(cart))
+        console.log('item saved to cart')
+    }
 })

@@ -11,10 +11,9 @@
     function CartController(CartService, CheckoutService) {
         debugger
 
-        this.cartStatus = 'Working'  
+        this.cartStatus = 'Working'
 
         this.cart = CartService.getCart((products) => {
-            console.log(products.data[0].msrp)
             this.products = products.data
             return this.products
         })
@@ -26,18 +25,20 @@
         }
 
         this.calculateMsrp = function () {
-            debugger
+            var total;
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
-                var total = this.cart[i].msrp * this.cart[i].quantity
+                total = this.cart[i].msrp * this.cart[i].quantity
                 sum += total;
             }
+            for (var i = 0; i < this.cart.length; i++) {
+                total = this.cart[i].price * this.cart[i].quantity
+                sum += total
+            }
             return sum
-            console.log(sum)
         }
 
         this.calculateMembers = function () {
-            debugger
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
                 var total = this.cart[i].memberPrice * this.cart[i].quantity;
@@ -47,7 +48,6 @@
         }
 
         this.calculateNonMembers = function () {
-            debugger
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
                 var total = this.cart[i].nonMemberPrice * this.cart[i].quantity;
