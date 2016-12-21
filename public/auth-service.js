@@ -21,7 +21,6 @@ angular.module('1x')
     }
 
     authStore.login = (credentials) => {
-      debugger
       firebaseApp.auth().signInWithEmailAndPassword(credentials.email, credentials.password).catch(errorHandler).catch(errorHandler)
     }
 

@@ -16,16 +16,6 @@ function navCtrl(AuthService, $scope) {
     $ctrl.activeView = 'login';
   }
 
-  let updateUser = (user) => {
-    $ctrl.member = user
-    $ctrl.activeView = null
-    update()
-  }
-
-  $ctrl.$onInit = () => {
-    AuthService.on('USER', updateUser)
-  }
-
   this.login = (credentials) => {
     AuthService.login(credentials)
   }
@@ -36,6 +26,17 @@ function navCtrl(AuthService, $scope) {
 
   this.register = (credentials) => {
     AuthService.register(credentials)
+  }
+
+  // GET LOGGED IN USER INFO
+  let updateUser = (user) => {
+    $ctrl.member = user
+    $ctrl.activeView = null
+    update()
+  }
+
+  $ctrl.$onInit = () => {
+    AuthService.on('USER', updateUser)
   }
 
   let update = () => {

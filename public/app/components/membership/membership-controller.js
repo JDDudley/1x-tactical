@@ -1,15 +1,31 @@
 (function () {
 
-  angular.module('1x')
+    angular.module('1x')
         .component('membership', {
             templateUrl: 'app/components/membership/membership.html',
             controller: MembershipController
-                    })
-    
-    function MembershipController() {
-        var mc = this;
-        // maybe some code...someday...
+        })
+
+    MembershipController.$inject = ['AuthService', '$scope']
+
+    function MembershipController(AuthService, $scope) {
+        var $ctrl = this;
+
+        // GET LOGGED IN USER INFO
+        let updateUser = (user) => {
+            $ctrl.user = user
+            update()
         }
-        
+
+        $ctrl.$onInit = () => {
+            AuthService.on('USER', updateUser)
+        }
+
+        let update = () => {
+            $scope.$evalAsync()
+        }
+
+    }
+
 
 })(); 
