@@ -1,6 +1,6 @@
 let stripe = require("stripe")("sk_live_vtQViHmHf6PpXaBRHEXjrty8");
 
-function create(body) {
+function create(body, cb) {
     console.log('creating membership charge...');
     var token = body.stripeToken;
     console.log('Stripe Token: ' + token);
@@ -20,6 +20,7 @@ function create(body) {
         } else {
             //success
             console.log(charge);
+            cb(charge)
         }
     });
 };
