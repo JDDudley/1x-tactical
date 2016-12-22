@@ -16,8 +16,8 @@
         </div>
 
 
+        <!--Add Product Form-->
         <div ng-show="showProductForm">
-            <h3>Arm Up</h3>
             <i ng-click="showProductForm=!showProductForm" class="material-icons">close</i>
             <form ng-submit="$ctrl.addItem($ctrl.newItem)">
                 <label>Product Name:</label>
@@ -66,13 +66,9 @@
 
 
 
-
+        <!--Add Event Form-->
         <div ng-show="showEventForm">
-
-            <h3>Train Up</h3>
-
             <i ng-click="showEventForm=!showEventForm" class="material-icons">close</i>
-
             <form ng-submit="$ctrl.addEvent($ctrl.newEvent)">
                 <label>Event Name</label>
                 <input class="form-control" ng-model="$ctrl.newEvent.name" type="text" placeholder="Event Name" required>
@@ -101,18 +97,27 @@
         </div>
 
 
-
+        <!--Add Discount Form-->
         <div ng-show="showDiscountForm">
             <h1>Save Up</h1>
-            <i ng-click="showEventForm=!showEventForm" class="material-icons">close</i>
+            <i ng-click="showDiscountForm=!showDiscountForm" class="material-icons">close</i>
             <form ng-submit="$ctrl.addDiscount($ctrl.newDiscount)">
                 <label>Discount Code</label>
-                <input class="form-control" ng-model="$ctrl.newDiscount.id" type="text" placeholder="Event Name" required>
+                <input class="form-control" ng-model="$ctrl.newDiscount.id" type="text" placeholder="Discount Code" required>
                 <label>Percent Off</label>
-                <input class="form-control" ng-model="$ctrl.newDiscount.percentageOff" type="text" placeholder="Event Name" required>
+                <input class="form-control" ng-model="$ctrl.newDiscount.percentageOff" type="text" placeholder="Percent Off (Don't include % sign)')"
+                    required>
                 <label>Product</label>
-                <input class="form-control" ng-model="$ctrl.newDiscount.product" type="text" placeholder="Event Name" required>
-                <button type="reset" class="btn-primary">Reset Form</button>
+                <!--WORK WITH NG-REPEAT TO PULL PRODUCTS-->
+                <select class="form-control" ng-model="$ctrl.newDiscount.product" required>
+                <option 
+                    ng-repeat="product in $ctrl.allProducts.data" 
+                    value={{product.name}}>
+                {{product.name}}
+                </option>
+                </select>
+                <!--<input class="form-control" ng-model="$ctrl.newDiscount.product" type="text" placeholder="Product" required>-->
+                <button type="reset" type="button" class="btn-primary">Reset Form</button>
                 <button type="button" class="btn-primary" ng-click="$ctrl.addDiscount($ctrl.newDiscount)">Submit</button>
             </form>
         </div>
