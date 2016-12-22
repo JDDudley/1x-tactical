@@ -111,10 +111,8 @@
                 <!--WORK WITH NG-REPEAT TO PULL PRODUCTS-->
                 <select class="form-control" ng-model="$ctrl.newDiscount.product" required>
                 <option 
-                    ng-repeat="product in $ctrl.allProducts" 
-                    style="color:#FF0000"
-                    value={{product.product.name}}
-                    >
+                    ng-repeat="product in $ctrl.allProducts.data" 
+                    value={{product.name}}>
                 {{product.name}}
                 </option>
                 </select>
