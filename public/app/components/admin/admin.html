@@ -112,7 +112,9 @@
                 <select class="form-control" ng-model="$ctrl.newDiscount.product" required>
                 <option 
                     ng-repeat="product in $ctrl.allProducts" 
-                    value={{product.product.name}}>
+                    style="color:#FF0000"
+                    value={{product.product.name}}
+                    >
                 {{product.name}}
                 </option>
                 </select>
