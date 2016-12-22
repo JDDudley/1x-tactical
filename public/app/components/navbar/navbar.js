@@ -127,6 +127,7 @@ angular.module('1x')
 //     }
 // }
 
+<<<<<<< HEAD
 function navCtrl() {
     let $ctrl = this
 
@@ -162,3 +163,43 @@ function navCtrl() {
         // $scope.$evalAsync()
     }
 }
+=======
+navCtrl.$inject = ['AuthService', '$scope']
+
+function navCtrl(AuthService, $scope) {
+  let $ctrl = this
+  
+  $ctrl.activeView = null;
+  
+  $ctrl.logIn = function() {
+    $ctrl.activeView = 'login';
+  }
+
+  this.login = (credentials) => {
+    AuthService.login(credentials)
+  }
+
+  this.logout = () => {
+    AuthService.logout()
+  }
+
+  this.register = (credentials) => {
+    AuthService.register(credentials)
+  }
+
+  // GET LOGGED IN USER INFO
+  let updateUser = (user) => {
+    $ctrl.member = user
+    $ctrl.activeView = null
+    update()
+  }
+
+  $ctrl.$onInit = () => {
+    AuthService.on('USER', updateUser)
+  }
+
+  let update = () => {
+    $scope.$evalAsync()
+  }
+}
+>>>>>>> 20ed96dadc5baa51144bd2d76290d8ff8d9c764a
