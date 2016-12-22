@@ -24,21 +24,11 @@
 
 
         ac.addItem = (product) => {
-<<<<<<< HEAD
-
-=======
-            debugger
->>>>>>> admin
             console.log(product)
             as.addProduct(product);
         }
 
         ac.addEvent = (event) => {
-<<<<<<< HEAD
-
-=======
-            debugger
->>>>>>> admin
             as.addEvent(event)
         }
 
