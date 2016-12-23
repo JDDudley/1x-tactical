@@ -17,7 +17,11 @@ function navCtrl(AuthService, $scope) {
   }
 
   this.login = (credentials) => {
-    AuthService.login(credentials)
+    AuthService.login(credentials,function(res) {
+      if (res == 'wrongpass') {
+        nc.error = 'wrongpass';
+      }
+    })
   }
 
   this.logout = () => {
@@ -33,6 +37,7 @@ function navCtrl(AuthService, $scope) {
     $ctrl.member = user
     $ctrl.activeView = null
     update()
+    console.log($ctrl.member);
   }
 
   $ctrl.$onInit = () => {

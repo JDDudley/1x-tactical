@@ -22,10 +22,7 @@
                 <!--<li><a href="#training" id="nav-training">Training</a></li>-->
                 <!--<li><a href="#news" id="nav-news">News</a></li>-->
                 <li><a class="x-signin" ng-click="nc.logIn()" ng-if="!nc.member.email">Sign in</a></li>
-                <li ng-if="nc.member.email">
-                    <p style="color: #fff;" class="">Hi, {{nc.member.displayName.split(' ')[0]}}</p>
-                </li>
-                <li ng-if="nc.member.email"><img class="profile-picture" ng-src="{{nc.member.photoURL}}" alt="profile" ng-if="nc.member.photoURL"></li>
+                <li ng-if="nc.member.email"><a ui-sref="profile">Hi, {{nc.member.displayName}}</a></li>
                 <li ng-if="nc.member.email"><a class="x-signin" ng-click="nc.logout()">Logout</a></li>
             </ul>
         </div>
@@ -44,7 +41,7 @@
             <form class="x-form" ng-submit="nc.activeView == 'register' ? nc.register(nc.auth) : nc.login(nc.auth)">
                 <p class="fieldset" ng-if="nc.activeView == 'register'">
                     <label class="image-replace x-username" for="signup-username">Name</label>
-                    <input class="full-width has-padding has-border" ng-model="nc.auth.displayname" type="text" placeholder="Username">
+                    <input class="full-width has-padding has-border" ng-model="nc.auth.displayName" type="text" placeholder="Name">
                 </p>
 
                 <p class="fieldset">
@@ -56,6 +53,7 @@
                     <input class="full-width has-padding has-border" ng-model="nc.auth.password" type="{{nc.showPassword ? 'text': 'password'}}"
                         placeholder="Password">
                     <a class="hide-password" ng-click="nc.showPassword = !nc.showPassword">{{nc.showPassword ? 'hide': 'show'}}</a>
+                    <p class="x-form-message" ng-if="nc.error = 'wrongpass'">You have entered an incorrect password.</p>
                 </p>
 
                 <p class="fieldset">
@@ -63,8 +61,11 @@
                     <label for="remember-me">Remember Me</label>
                 </p>
 
-                <p class="fieldset">
-                    <input class="full-width" type="submit" value="Login">
+                <p class="fieldset" ng-if="nc.activeView == 'register'">
+                    <input class="full-width" type="submit" value="Sign Up">
+                </p>
+                <p class="fieldset" ng-if="nc.activeView == 'login'">
+                    <input class="full-width" type="submit" value="Log In">
                 </p>
             </form>
 
