@@ -35,9 +35,9 @@ function navCtrl(AuthService, $scope) {
   // GET LOGGED IN USER INFO
   let updateUser = (user) => {
     $ctrl.member = user
+    AuthService.member = user
     $ctrl.activeView = null
     update()
-    console.log($ctrl.member);
   }
 
   $ctrl.$onInit = () => {

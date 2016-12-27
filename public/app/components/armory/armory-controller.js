@@ -6,10 +6,27 @@
             controller: ArmoryController
                     })
     
-    function ArmoryController() {
-        var mc = this;
-        // maybe some code...someday...
-        }
-        
+  ArmoryController.$inject = ['ArmoryService', 'CheckoutService']
+    function ArmoryController(AS, CS) {
+        var ac = this;
+        ac.products = [];
 
-})(); 
+        AS.getAll((products) => {
+            console.log(products)
+            ac.products = products.data
+        });
+
+        ac.addToCart = (product) => {
+            console.log(product)
+            CS.addToCart(product)
+            console.log('adding product to cart..')
+        }
+
+    ac.removeFromCart=(id)=>{
+        CS.removeFromCart(id)
+        console.log(product.name + " has been removed from your shopping cart.")
+    }
+
+    }
+
+})();  

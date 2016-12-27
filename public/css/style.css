@@ -14,6 +14,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
 }
+.navbar-member {
+	text-align: right;
+	color: #fff !important;
+}
+.navbar-member > a {
+	color: #e8e8e8;
+}
 .full-height {
     min-height: 100vh;
     padding-top: 60px;
@@ -129,6 +136,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .footer-link {
     color: indianred !important;
+}
+/*armory */
+.armory-dropdown, .armory-search {
+	color: #000;
 }
 
 /*events*/
