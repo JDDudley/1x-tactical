@@ -6,22 +6,30 @@
             controller: CartController
         })
 
-    CartController.$inject = ['CartService']
+    CartController.$inject = ['CartService', 'AuthService', '$scope']
 
-    function CartController(CartService) {
-        // debugger
-        $ctrl = this;
+    function CartController(CartService, AuthService, $scope) {
 
-        $ctrl.cartStatus = 'Working'
+        var $ctrl = this;
+
+        // GET LOGGED IN USER INFO
+        let updateUser = (user) => {
+            $ctrl.user = user
+            update()
+        }
 
         $ctrl.cart = []
 
         $ctrl.$onInit = function () {
+            AuthService.on('USER', updateUser)
             var localCart = JSON.parse(localStorage.getItem('localCart')) || [];
             if (localCart) {
                 $ctrl.cart = localCart;
             }
-            console.log($ctrl.cart);
+        }
+
+        let update = () => {
+            $scope.$evalAsync()
         }
 
         this.products = []
@@ -73,6 +81,7 @@
                     this.cart.splice(i, 1)
                 }
             }
+            localStorage.setItem('localCart', JSON.stringify(this.cart))
             return this.cart
         }
 
@@ -88,6 +97,7 @@
                 nonMemberPrice: product.nonMemberPrice
             }
             this.cart.push(newProduct)
+            localStorage.setItem('localCart', JSON.stringify(this.cart));
         }
     }
 
