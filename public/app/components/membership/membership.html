@@ -3,13 +3,20 @@
     <div class="col-xs-10 col-md-8 col-lg-6">
         <h2 class="section-header">Team Membership</h2>
         <p>Join 1X Tactical to gain access to a wide range of training and support from experts in their fields.</p>
-        <p>Members also enjoy huge discounts on all supplies in the armory. Membership cost is an affordable $99/year. Act now
-            for your chance to win $1,000 in gear!</p>
-        <p>The first 100 to sign up will be entered into a drawing for <strong>$1,000 of Tactical Gear!</strong></p>
-        <div class="col-xs-12 text-center" id="membership-btn-div">
+        <p>Members also enjoy huge discounts on all supplies in the armory. Membership cost is an affordable $99/year.</p>
+        <!--<div class="col-xs-12 text-center" id="membership-btn-div">-->
+            <!--OLD BUTTONS FOR JOIN NOW & SIGN UP-->
             <!--<a ng-show="!$ctrl.user" ng-click="ng.logIn()">Sign Up to Become a Member!</a><br>-->
-            <a ui-sref="join" ng-show="$ctrl.user"><button class="btn btn-danger join-btn">Join Now!</button></a><br>
-        </div>
+            <!--<a ui-sref="join" ng-show="$ctrl.user"><button class="btn btn-danger join-btn">Join Now!</button></a><br>-->
+        <!--</div>-->
+        <br><br>
+        <table class="table">
+            <tr>
+                <td>1 Year 1XTactical Membership</td>
+                <td>$99.00</td>
+                <td><a ng-click="$ctrl.addToCart()" ng-href="/#/cart"><button class="btn btn-danger">Add to Cart</button></a></td>
+            </tr>
+        </table>
         <h2 class="section-header">Benefits</h2>
         <ul class="benefit-list">
             <li>Pricing

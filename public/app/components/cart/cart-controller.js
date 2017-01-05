@@ -10,24 +10,33 @@
 
     function CartController(CartService) {
         // debugger
+        $ctrl = this;
 
-        this.cartStatus = 'Working'
+        $ctrl.cartStatus = 'Working'
 
-        this.cart = []
+        $ctrl.cart = []
+
+        $ctrl.$onInit = function () {
+            var localCart = JSON.parse(localStorage.getItem('localCart')) || [];
+            if (localCart) {
+                $ctrl.cart = localCart;
+            }
+            console.log($ctrl.cart);
+        }
 
         this.products = []
 
-        this.store = CartService.getAll((products) => {
-            console.log(products.data[0].msrp)
-            this.products = products.data
-            return this.products
-        })
+        // this.store = CartService.getAll((products) => {
+        //     console.log(products.data[0].msrp)
+        //     this.products = products.data
+        //     return this.products
+        // })
 
 
         this.name = 'My Cart'
 
-        this.getCartCount = function () {
-            return this.cart.length
+        $ctrl.getCartCount = function () {
+            return $ctrl.cart.length
         }
 
         this.calculateMsrp = function () {

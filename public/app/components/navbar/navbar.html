@@ -23,6 +23,7 @@
                 <!--<li><a href="#news" id="nav-news">News</a></li>-->
                 <li ui-sref-active="active"><a class="x-signin" ng-click="nc.logIn()" ng-if="!nc.member.email">Sign in</a></li>
                 <li ui-sref-active="active" ng-if="nc.member.email"><a class="x-signin" ng-click="nc.logout()">Logout</a></li>
+                <li ui-sref-active="active"><a ui-sref="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
             </ul>
         </div>
         <div ng-if="nc.member.email" class="navbar-member">

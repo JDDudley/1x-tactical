@@ -154,6 +154,12 @@ h1, h2, h3, h4, h5, h6 {
 	color: #000 !important;
 }
 
+/*cart*/
+
+.cart-quantity {
+	width: 40px;
+	color: #000;
+}
 /*authorization styling*/
 
 input::-ms-clear,

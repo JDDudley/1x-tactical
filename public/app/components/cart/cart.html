@@ -1,43 +1,43 @@
-<div class="container-fluid">
-    <h1>{{$ctrl.name}}</h1>
-    <p>Items in cart: ({{$ctrl.cart.length}})</p>
-    <table class="table" ng-if="$ctrl.cart.length > 0">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>MSRP</th>
-                <th>Members</th>
-                <th>Non-Members</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="product in $ctrl.cart">
-                <td>{{product.name}}</td>
-                <td>
-                    <select ng-model="product.quantity" ng-options="o as o for o in [1,2,3,4,5,6,7,8,9,10]"></select>
-                </td>
-                <td>{{product.msrp * product.quantity | currency}}</td>
-                <td>{{product.memberPrice * product.quantity | currency}}</td>
-                <td>{{product.nonMemberPrice * product.quantity | currency}}</td>
-                <td>
-                    <button class="btn btn-xs btn-warning" ng-click="$ctrl.removeProductFromCart(product)">X</button>
-                </td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td></td>
-                <td class="text-right">Total</td>
-                <td>{{$ctrl.calculateMsrp() | currency}}</td>
-                <td>{{$ctrl.calculateMembers() | currency}}</td>
-                <td>{{$ctrl.calculateNonMembers() | currency}}</td>
-            </tr>
-        </tfoot>
-    </table>
+<div class="row full-height">
+    <div class="col-xs-12">
+        <h1>{{$ctrl.name}}</h1>
+        <p>Items in cart: ({{$ctrl.cart.length}})</p>
+        <table class="table" ng-if="$ctrl.cart.length > 0">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Members</th>
+                    <th>Non-Members</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in $ctrl.cart">
+                    <td>{{product.name}}</td>
+                    <td><input type="number" value="{{product.quantity}}" class="cart-quantity">
+                        <!--<select ng-model="product.quantity" ng-options="o as o for o in [1,2,3,4,5,6,7,8,9,10]"></select>-->
+                    </td>
+                    <td>{{product.memberPrice * product.quantity | currency}}</td>
+                    <td>{{product.nonMemberPrice * product.quantity | currency}}</td>
+                    <td>
+                        <button class="btn btn-xs btn-warning" ng-click="$ctrl.removeProductFromCart(product)">X</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td class="text-right">Total</td>
+                    <!--<td>{{$ctrl.calculateMsrp() | currency}}</td>-->
+                    <td>{{$ctrl.calculateMembers() | currency}}</td>
+                    <td>{{$ctrl.calculateNonMembers() | currency}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </div>
 
-<div class="container-fluid">
+<!--<div class="container-fluid">
     <div class="row">
         <select ng-model="$ctrl.filterBy" style="color:black">
             <option value="name" ng-selected>Name</option>
@@ -60,4 +60,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->

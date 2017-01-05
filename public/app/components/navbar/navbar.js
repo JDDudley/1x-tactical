@@ -21,6 +21,7 @@ function navCtrl(AuthService, $scope) {
       if (res == 'wrongpass') {
         nc.error = 'wrongpass';
       }
+        console.log(nc.error);
     })
   }
 
