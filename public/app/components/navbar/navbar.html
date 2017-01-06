@@ -1,7 +1,7 @@
 <div class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="brand" href="/"><img src="/images/1x-navbar.png" class="hidden-xs"><img src="/images/1x-text.png"></a>
+            <a class="brand" href="/"><img src="/images/1x-navbar.png" class="hidden-xs hidden-sm"><img src="/images/1x-text.png"></a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -21,18 +21,18 @@
         <li ui-sref-active="active" ng-hide="!loggedIn"><a href="/" ng-click="SignOut()">Sign Out</a></li>-->
                 <!--<li><a href="#training" id="nav-training">Training</a></li>-->
                 <!--<li><a href="#news" id="nav-news">News</a></li>-->
-                <li><a class="x-signin" ng-click="nc.logIn()" ng-if="!nc.member.email">Sign in</a></li>
-                <li ng-if="nc.member.email">
-                    <p style="color: #fff;" class="">Hi, {{nc.member.displayName.split(' ')[0]}}</p>
-                </li>
-                <li ng-if="nc.member.email"><img class="profile-picture" ng-src="{{nc.member.photoURL}}" alt="profile" ng-if="nc.member.photoURL"></li>
-                <li ng-if="nc.member.email"><a class="x-signin" ng-click="nc.logout()">Logout</a></li>
+                <li ui-sref-active="active"><a class="x-signin" ng-click="nc.logIn()" ng-if="!nc.member.email">Sign in</a></li>
+                <li ui-sref-active="active" ng-if="nc.member.email"><a class="x-signin" ng-click="nc.logout()">Logout</a></li>
+                <li ui-sref-active="active"><a ui-sref="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
             </ul>
+        </div>
+        <div ng-if="nc.member.email" class="navbar-member">
+            <a ui-sref="profile">Hi, {{nc.member.email}}</a>
         </div>
     </div>
 </div>
 <div class="x-user-modal" ng-class="{'is-visible': nc.activeView.length > 0}">
-<!--<div class="x-user-modal" ng-hide="nc.activeView.length > 0"></div>-->
+    <!--<div class="x-user-modal" ng-hide="nc.activeView.length > 0"></div>-->
     <div class="x-user-modal-container">
         <ul class="x-switcher">
             <li><a ng-class="{'selected': nc.activeView == 'login'}" ng-click="nc.activeView = 'login'">Sign In</a></li>
@@ -44,7 +44,7 @@
             <form class="x-form" ng-submit="nc.activeView == 'register' ? nc.register(nc.auth) : nc.login(nc.auth)">
                 <p class="fieldset" ng-if="nc.activeView == 'register'">
                     <label class="image-replace x-username" for="signup-username">Name</label>
-                    <input class="full-width has-padding has-border" ng-model="nc.auth.displayname" type="text" placeholder="Username">
+                    <input class="full-width has-padding has-border" ng-model="nc.auth.displayName" type="text" placeholder="Name">
                 </p>
 
                 <p class="fieldset">
@@ -56,6 +56,7 @@
                     <input class="full-width has-padding has-border" ng-model="nc.auth.password" type="{{nc.showPassword ? 'text': 'password'}}"
                         placeholder="Password">
                     <a class="hide-password" ng-click="nc.showPassword = !nc.showPassword">{{nc.showPassword ? 'hide': 'show'}}</a>
+                    <p class="x-form-message" ng-if="nc.error = 'wrongpass'">You have entered an incorrect password.</p>
                 </p>
 
                 <p class="fieldset">
@@ -63,12 +64,15 @@
                     <label for="remember-me">Remember Me</label>
                 </p>
 
-                <p class="fieldset">
-                    <input class="full-width" type="submit" value="Login">
+                <p class="fieldset" ng-if="nc.activeView == 'register'">
+                    <input class="full-width" type="submit" value="Sign Up">
+                </p>
+                <p class="fieldset" ng-if="nc.activeView == 'login'">
+                    <input class="full-width" type="submit" value="Log In">
                 </p>
             </form>
 
-            <p class="x-form-bottom-message"><a ng-click="nc.activeView = 'forgot'">Forgot your password?</a> - <a>view Terms</a></p>
+            <p class="x-form-bottom-message"><a ng-click="nc.activeView = 'forgot'">Forgot your Password?</a></p>
             <a ng-click="nc.activeView = ''; nc.show = false;" class="x-close-form">Close</a>
         </div>
         <!-- x-login -->

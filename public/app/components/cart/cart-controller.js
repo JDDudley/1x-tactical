@@ -6,28 +6,45 @@
             controller: CartController
         })
 
-    CartController.$inject = ['CartService']
+    CartController.$inject = ['CartService', 'AuthService', '$scope']
 
-    function CartController(CartService) {
-        // debugger
+    function CartController(CartService, AuthService, $scope) {
 
-        this.cartStatus = 'Working'
+        var $ctrl = this;
 
-        this.cart = []
+        // GET LOGGED IN USER INFO
+        let updateUser = (user) => {
+            $ctrl.user = user
+            update()
+        }
+
+        $ctrl.cart = []
+
+        $ctrl.$onInit = function () {
+            AuthService.on('USER', updateUser)
+            var localCart = JSON.parse(localStorage.getItem('localCart')) || [];
+            if (localCart) {
+                $ctrl.cart = localCart;
+            }
+        }
+
+        let update = () => {
+            $scope.$evalAsync()
+        }
 
         this.products = []
 
-        this.store = CartService.getAll((products) => {
-            console.log(products.data[0].msrp)
-            this.products = products.data
-            return this.products
-        })
+        // this.store = CartService.getAll((products) => {
+        //     console.log(products.data[0].msrp)
+        //     this.products = products.data
+        //     return this.products
+        // })
 
 
         this.name = 'My Cart'
 
-        this.getCartCount = function () {
-            return this.cart.length
+        $ctrl.getCartCount = function () {
+            return $ctrl.cart.length
         }
 
         this.calculateMsrp = function () {
@@ -64,6 +81,7 @@
                     this.cart.splice(i, 1)
                 }
             }
+            localStorage.setItem('localCart', JSON.stringify(this.cart))
             return this.cart
         }
 
@@ -79,6 +97,7 @@
                 nonMemberPrice: product.nonMemberPrice
             }
             this.cart.push(newProduct)
+            localStorage.setItem('localCart', JSON.stringify(this.cart));
         }
     }
 

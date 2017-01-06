@@ -1,13 +1,15 @@
 (function () {
 
     angular.module('1x')
-        .component('join', {
-            templateUrl: 'app/components/join/join.html',
-            controller: JoinController
+        .component('checkout', {
+            templateUrl: 'app/components/checkout/checkout.html',
+            controller: CheckoutController
         })
 
-    function JoinController() {
-        var jc = this;
+    CheckoutController.$inject = ['CheckoutService'];
+
+    function CheckoutController(CheckoutService) {
+        var $ctrl = this;
         $('#join-form').on('submit', function () {
             var response = validateInfo();
             if (response) {

@@ -13,6 +13,23 @@
     <link rel="stylesheet" href="/css/style.css">
     <!--mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body id="top">
@@ -25,11 +42,9 @@
         <!--End Angular-->
         <div class="row footer">
             <div class="col-xs-12">
-                &copy; 2016 1X Tactical.<br>
-                [ <a class="footer-link" ui-sref="home">Home</a> ] 
-                [ <a class="footer-link" ui-sref="membership">Membership</a> ] 
-                [ <a class="footer-link" ui-sref="events">Events</a> ]
-                [ <a class="footer-link" ui-sref="armory">Armory</a> ]
+                &copy; 2016 1X Tactical.<br> [ <a class="footer-link" ui-sref="home">Home</a> ] [ <a class="footer-link"
+                    ui-sref="membership">Membership</a> ] [ <a class="footer-link" ui-sref="events">Events</a> ] [ <a class="footer-link"
+                    ui-sref="armory">Armory</a> ]
             </div>
         </div>
     </div>
@@ -47,6 +62,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script src="/js/firebase.js"></script>
     <!--custom js-->
     <!--stripe-->
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
@@ -58,20 +74,22 @@
     <script src="app.js"></script>
     <script src="auth-service.js"></script>
     <script src="app-routes.js"></script>
+    <!--/*<script src="/app/utils/auth-component.js"></script>*/-->
     <script src="/app/components/navbar/navbar.js"></script>
     <script src="/app/components/home/home-controller.js"></script>
-    <script src="/app/components/join/join-controller.js"></script>
     <script src="/app/components/mindset/mindset-controller.js"></script>
     <script src="/app/components/benefits/benefits-controller.js"></script>
     <script src="/app/components/membership/membership-controller.js"></script>
     <script src="/app/components/armory/armory-controller.js"></script>
+    <script src="/app/components/armory/armory-service.js"></script>
     <script src="/app/components/cart/cart-controller.js"></script>
     <script src="/app/components/cart/cart-service.js"></script>
     <script src="/app/components/admin/admin-controller.js"></script>
     <script src="/app/components/admin/admin-service.js"></script>
     <script src="/app/components/events/events-controller.js"></script>
     <script src="/app/components/events/events-service.js"></script>
-     <script src="/app/components/checkout/checkout-service.js"></script>
+    <script src="/app/components/checkout/checkout-controller.js"></script>
+    <script src="/app/components/checkout/checkout-service.js"></script>
 </body>
 
 </html>
