@@ -8,9 +8,6 @@
         let discountUrl= '/api/discount';
         let as = this;
 
-
-
-
         as.addProduct = (product) => {
             let productObj = {
                 "product": {
@@ -86,5 +83,18 @@
                         : alert("successfully posted the event " + discountObj.id + " to the event page")
                 })
         }
+
+
+    // as.getProducts=(cb)=>{
+    //     $http({
+    //         method: 'GET',
+    //         url: '/api/store'
+    //     }).then(cb).catch(cb)
+    // }
+    
+
     })
+
+
+
 })();
