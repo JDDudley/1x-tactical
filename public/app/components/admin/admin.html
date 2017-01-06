@@ -19,7 +19,8 @@
         </div>
 
 
-        <h3>Edit</h3>
+        <!--EDIT PRODUCTS/EVENT/DISCOUNT-->
+        <!--<h3>Edit</h3>
         <div class="col-xs-12 col-md-4">
             <button type="button" class="btn-lg btn-primary" ng-click="editProductForm= !editProductForm"> Edit a Product</button>
         </div>
@@ -28,7 +29,16 @@
         </div>
         <div class="col-xs-12 col-md-4">
             <button type="button" class="btn-lg btn-primary" ng-click="editDiscountForm= !editDiscountForm"> Edit a Discount</button>
+        </div>-->
+
+
+        <h3>Delete</h3>
+        <div class="col-xs-12 col-md-4">
+
+            <button type="button" class="btn-lg btn-danger" ng-click="deleteProductForm=!deleteProductForm">Delete Product</button>
         </div>
+
+
 
 
         <!--Add Product Form-->
@@ -36,7 +46,7 @@
             <i ng-click="showProductForm=!showProductForm" class="material-icons">close</i>
             <form ng-submit="$ctrl.addItem($ctrl.newItem)">
                 <label>Product Name:</label>
-                <input class="form-control" ng-model="$ctrl.newItem.name" type="text" required>
+                <input class="form-control" ng-model="$ctrl.newItem.name" type="text"  placeholder="Product Name" required>
                 <!--<label>Brand: </label>
             <input class="form-control" ng-model="$ctrl.newItem.brand" type="text" placeholder="Brand">-->
                 <label for="sel1">Category:</label>
@@ -137,10 +147,56 @@
         </div>
 
 
-
-
-
+        <!--Delete a product-->
+        <div ng-show="deleteProductForm">
+                 <label for="">Choose Product to Delete</label>
+        <!--WORK WITH NG-REPEAT TO PULL PRODUCTS-->
+                <select class="form-control" ng-model="$ctrl.product.id" required>
+                <option 
+                    ng-repeat="product in $ctrl.allProducts.data" 
+                    value={{product.id}}>
+                {{product.name}}
+                </option>
+                </select>             
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+            <button class="btn-primary btn-sm" type="button" ng-click="$ctrl.editProduct($ctrl.product.id)">Delete</button>
+        </div>
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         <div ng-show="editProductForm">
                 <h1>   Form to Edit Products will be here soon...  </h1>
@@ -159,13 +215,6 @@
         <div ng-show="editProductForm"> 
         <div id="renderProduct"> Form to Edit Product Will Appear Here...</div>   
         </div>
-
-
-
-
-
-
-
 
 
         <div ng-show="editEventForm">
