@@ -143,13 +143,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*events*/
-.event-card {
+.event-card{
 	background-color:tan;
 	color: #000;
 	padding: 10px;
 	margin-bottom: 20px;
 	border-radius: 10px;
 }
+
+pre{
+	background-color: #000 ;
+	color: #666;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
 .card-title {
 	color: #000 !important;
 }
