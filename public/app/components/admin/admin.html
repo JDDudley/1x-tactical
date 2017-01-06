@@ -90,9 +90,9 @@
                 <!--Member Price is 10% of Non-Member Price-->
                 <input class="form-control" ng-model="$ctrl.newEvent.price" type="text" placeholder="Price" required>
                 <label>Description</label>
-                <textarea class="form-control" ng-model="$ctrl.newEvent.description" type="text" placeholder="Description" required></textarea>
+                <textarea class="form-control" ng-model="$ctrl.newEvent.description" type="text" placeholder="Description" wrap="hard" required></textarea>
                 <label>Date</label>
-                <input class="form-control" ng-model="$ctrl.newEvent.date" type="text" placeholder="MM/DD/YYYY" required>
+                <input class="form-control" ng-model="$ctrl.newEvent.date" type="text" placeholder="MM/DD/YYYY"  required>
                 <label>Time</label>
                 <input class="form-control" ng-model="$ctrl.newEvent.time" type="text" placeholder="HH:MM" required>
                 <label>Min Seats</label>
@@ -145,16 +145,16 @@
         <div ng-show="editProductForm">
                 <h1>   Form to Edit Products will be here soon...  </h1>
                 <h3>  For now contact dev team  </h3>
-                        <!--<label for="">Choose Product to edit</label>
-        WORK WITH NG-REPEAT TO PULL PRODUCTS-->
-                <!--<select class="form-control" ng-model="$ctrl.product.id" required>
+                        <label for="">Choose Product to edit</label>
+        <!--WORK WITH NG-REPEAT TO PULL PRODUCTS-->
+                <select class="form-control" ng-model="$ctrl.product.id" required>
                 <option 
                     ng-repeat="product in $ctrl.allProducts.data" 
                     value={{product.id}}>
                 {{product.name}}
                 </option>
                 </select>             
-            <button class="btn-primary btn-sm" type="button" ng-click="$ctrl.editProduct($ctrl.product.id)">Edit</button>-->
+            <button class="btn-primary btn-sm" type="button" ng-click="$ctrl.editProduct($ctrl.product.id)">Edit</button>
         </div>
         <div ng-show="editProductForm"> 
         <div id="renderProduct"> Form to Edit Product Will Appear Here...</div>   

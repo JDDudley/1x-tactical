@@ -13,7 +13,7 @@
                     <h4 class="card-title">Price: {{event.price | currency}}</h4>
                     <h4 class="card-title">Members Save 10% and pay only {{event.price - (event.price/10) |currency}}</h4>
                     <h4 class="card-title">Seat Requirement: {{event.minSeat}} to {{event.maxSeat}}</h4>
-                    <p class="card-text">{{event.description}}</p>
+                    <pre wrap="soft" class="card-text">{{event.description}}</pre>
                     <button ng-hide="showAdd" type="button" class="btn-primary" ng-click="$ctrl.addToCart(event); showAdd=!showAdd ">Add Seat To Cart</button>
                      <button ng-show="showAdd" id="event.id" type="button" class="btn-primary" ng-click="$ctrl.removeFromCart(event.id); showAdd=!showAdd">Remove Seat From Cart</button>
                 </div>
