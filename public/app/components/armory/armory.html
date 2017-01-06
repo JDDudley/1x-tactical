@@ -27,10 +27,11 @@
 		<button class="btn-success" type="button">Search</button>
 	</div>
 	<div class="col-xs-12">
-		<div ng-repeat="product in $ctrl.products | filter: $ctrl.query | filter: $ctrl.queryCat | orderBy: $ctrl.filterPrice" class="col-sm-4">
+		<div ng-repeat="product in $ctrl.products  |
+		    filter:{inStock:true} | filter: $ctrl.query | filter: $ctrl.queryCat | orderBy: $ctrl.filterPrice" class="col-sm-4">
 				<div class="shopping-product">
 					<div style="text-align:center">
-						<img ng-src="{{product.images[0]}}" style="width:200px ">
+						<img  ng-src="{{product.images[0]}}" style="width:200px ">
 					</div>
 					<h3 class="product-name">{{product.name}}</h3>
 					<p class="product-name">{{product.description}}</p>
