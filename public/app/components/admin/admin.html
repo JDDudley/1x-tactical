@@ -153,13 +153,13 @@
         <!--WORK WITH NG-REPEAT TO PULL PRODUCTS-->
                 <select class="form-control" ng-model="$ctrl.product.id" required>
                 <option 
-                    ng-repeat="product in $ctrl.allProducts.data" 
+                    ng-repeat="product in $ctrl.allProducts.data | filter:{inStock:true}" 
                     value={{product.id}}>
                 {{product.name}}
                 </option>
                 </select>             
             <i class="fa fa-window-close" aria-hidden="true"></i>
-            <button class="btn-primary btn-sm" type="button" ng-click="$ctrl.editProduct($ctrl.product.id)">Delete</button>
+            <button class="btn-primary btn-sm" type="button" ng-click="$ctrl.deleteProduct($ctrl.product.id)">Delete</button>
         </div>
         
 

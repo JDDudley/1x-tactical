@@ -5,7 +5,7 @@
 
         let storeUrl = '/api/store'
         let eventUrl = '/api/events'
-        let discountUrl= '/api/discount';
+        let discountUrl = '/api/discount';
         let as = this;
 
         as.addProduct = (product) => {
@@ -29,10 +29,10 @@
                 $http.post(storeUrl, productObj)
                     .success(function (data) {
                         console.log(data)
-                        data.error? 
-                        alert("Could not add " + productObj.product.name  + " to the Store. Make sure you are filling out all required fields. ")
-                                    : 
-                        alert(" You Successfully Posted the Product " + productObj.product.name + "  to the store.")
+                        data.error ?
+                            alert("Could not add " + productObj.product.name + " to the Store. Make sure you are filling out all required fields. ")
+                            :
+                            alert(" You Successfully Posted the Product " + productObj.product.name + "  to the store.")
                     })
         }
 
@@ -64,19 +64,19 @@
 
 
 
-         as.addDiscount = (discount) => {
-    var percent = discount.percentageOff*0.01;
-    var code = discount.id.toUpperCase(); 
+        as.addDiscount = (discount) => {
+            var percent = discount.percentageOff * 0.01;
+            var code = discount.id.toUpperCase();
             let discountObj = {
                 // "discount": {
-                    "id": code,
-                    "percentageOff": percent,
-                    "product": discount.product,
-                    "activeCode": true
+                "id": code,
+                "percentageOff": percent,
+                "product": discount.product,
+                "activeCode": true
                 // }
             }
             console.log(discountObj)
-                $http.post(discountUrl, discountObj)
+            $http.post(discountUrl, discountObj)
                 .success(function (data) {
                     data.error ?
                         alert("could not add " + discountObj.id + " to the Discount Database. Make sure all required fields are filled out.")
@@ -85,13 +85,25 @@
         }
 
 
-    // as.getProducts=(cb)=>{
-    //     $http({
-    //         method: 'GET',
-    //         url: '/api/store'
-    //     }).then(cb).catch(cb)
-    // }
-    
+        // as.getProducts=(cb)=>{
+        //     $http({
+        //         method: 'GET',
+        //         url: '/api/store'
+        //     }).then(cb).catch(cb)
+        // }
+
+        as.deleteProduct = id => {
+            console.log(id)
+            var deletedObj = {
+                "product":
+                {
+                    "inStock": false
+                }
+            }
+                console.log(deletedObj)
+            $http.put(storeUrl +'/' + id, deletedObj)
+        }
+
 
     })
 

@@ -14,9 +14,9 @@
         ac.imgId = 0;
 
         ac.allProducts = [];
-        ac.$onInit = function () { 
+        ac.$onInit = function () {
             CartService.getAll(function (products) {
-                ac.allProducts = products; 
+                ac.allProducts = products;
                 console.log(ac.allProducts);
             })
         }
@@ -35,21 +35,21 @@
             as.addDiscount(discount)
         }
 
-        ac.putProduct=function(product){
-                //call a function in service to do PUT request
-                debugger 
-                console.log(product)
+        ac.putProduct = function (product) {
+            //call a function in service to do PUT request
+            debugger
+            console.log(product)
         }
 
 
-                 var template; 
-        ac.editProduct=id=>{
+        var template;
+        ac.editProduct = id => {
             debugger
-                ac.allProducts.data.forEach((product)=>{  
-                 if(product.id == id){
-                     console.log(product)
-            template = 
-             ` <form ng-submit="ac.putProduct(ac.editedProduct)" >
+            ac.allProducts.data.forEach((product) => {
+                if (product.id == id) {
+                    console.log(product)
+                    template =
+                        ` <form ng-submit="ac.putProduct(ac.editedProduct)" >
                 <label>Product Name:</label>
                 <input class="form-control" type="text" ng-model="ac.editedProduct.name" value="${product.name}" required>
                 <label>Description</label>
@@ -69,18 +69,28 @@
                 
                 <button type="reset" class="btn-primary"> Resest Form</button>
                 <button type="button" class="btn-primary" id="submitPutForm" ng-submit="{{ac.putProduct(ac.editedProduct)}}">Submit</button>
-                </form>`    
+                </form>`
                 }
-                
+
             })
 
             $('#renderProduct').replaceWith(template)
-                // $('#submitPutForm').on('submit', ac.putProduct(ac.editedProduct))
-                }
+            // $('#submitPutForm').on('submit', ac.putProduct(ac.editedProduct))
+        }
+
+        ac.deleteProduct = id => { 
+            ac.allProducts.data.forEach((product) => {
+                if (id == product.id) {
+                    console.log({working: id})
+        }
+            })
+            as.deleteProduct(id)
+            console.log("deleted")
+        }
 
 
 
-       
+
 
     }
 })(); 
