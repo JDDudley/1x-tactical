@@ -1,7 +1,7 @@
 (() => {
     angular.module('1x')
         .config(
-        function($stateProvider, $urlRouterProvider) {
+        function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home')
             $stateProvider
                 .state({
@@ -54,5 +54,16 @@
                     url: '/checkout',
                     template: '<checkout></checkout>'
                 })
+                .state({
+                    name: 'addProduct',
+                    url: '/admin/addproduct',
+                    template: '<addProduct></addProduct>'
+                })
+                .state({
+                    name: 'addEvent',
+                    url: '/admin/addEvent',
+                    template: '<addEvent></addEvent>'
+                })
         })
-})(); 
+        
+        })(); 
