@@ -64,6 +64,7 @@ function newProduct(product) {
         images: product.images || {},
         reviews: product.reviews || '',
         msrp: product.msrp,
+        shipping: product.shipping,
         memberPrice: product.memberPrice,
         nonMemberPrice: product.nonMemberPrice,
         inStock: true,

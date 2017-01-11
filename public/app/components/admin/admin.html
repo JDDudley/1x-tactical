@@ -70,8 +70,11 @@
                 <textarea class="form-control" ng-model="$ctrl.newItem.description" type="text" placeholder="Description" required></textarea>
                 <!--<label>Specs (Separate by comma)</label>
             <input class="form-control" ng-model="$ctrl.newItem.specs" type="text" placeholder="Specs (separate with comma) ">-->
-                <label>MSRP</label >
+                <label>MSRP (Don't add $ on any prices. Example: for $50.00, just type  50.00')</label >
             <input  class="form-control" ng-model="$ctrl.newItem.msrp" type="text" placeholder="MSRP" required>
+           <label>Shipping Cost (no '$' example: 1.50)</label>
+                <input class="form-control" ng-model="$ctrl.newItem.shipping" type="text" placeholder="Price" required>
+               
             <label>Non-Member Price</label>
                 <input class="form-control" ng-model="$ctrl.newItem.nonMemberPrice" type="text" placeholder="Non-Member Price" required>
                 <label>Member Price</label>
@@ -97,8 +100,8 @@
                 <label>Event Name</label>
                 <input class="form-control" ng-model="$ctrl.newEvent.name" type="text" placeholder="Event Name" required>
                 <label>Price</label>
-                <!--Member Price is 10% of Non-Member Price-->
                 <input class="form-control" ng-model="$ctrl.newEvent.price" type="text" placeholder="Price" required>
+               
                 <label>Description</label>
                 <textarea class="form-control" ng-model="$ctrl.newEvent.description" type="text" placeholder="Description" wrap="hard" required></textarea>
                 <label>Date</label>
