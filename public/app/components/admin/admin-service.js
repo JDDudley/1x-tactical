@@ -17,6 +17,7 @@
                     "specs": product.specs || '',
                     "images": product.image || {},
                     "msrp": product.msrp,
+                    "shipping": product.shipping,
                     "memberPrice": product.memberPrice,
                     "nonMemberPrice": product.nonMemberPrice,
                     "inStock": true,
