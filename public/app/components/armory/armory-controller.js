@@ -17,9 +17,9 @@
         });
 
         ac.addToCart = (product) => {
-            console.log(product)
+            console.log('add to cart working')
+            debugger 
             CS.addToCart(product)
-            console.log('adding product to cart..')
         }
 
     ac.removeFromCart=(id)=>{

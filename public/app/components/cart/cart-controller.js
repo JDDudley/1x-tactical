@@ -6,10 +6,9 @@
             controller: CartController
         })
 
-    CartController.$inject = ['CartService', 'AuthService', '$scope']
+    CartController.$inject = ['CartService', 'AuthService', '$scope', 'CheckoutService']
 
-    function CartController(CartService, AuthService, $scope) {
-
+    function CartController(CartService, AuthService, $scope, CheckoutService) {
         var $ctrl = this;
 
         // GET LOGGED IN USER INFO
@@ -18,15 +17,20 @@
             update()
         }
 
-        $ctrl.cart = []
 
         $ctrl.$onInit = function () {
+            // debugger
             AuthService.on('USER', updateUser)
-            var localCart = JSON.parse(localStorage.getItem('localCart')) || [];
-            if (localCart) {
-                $ctrl.cart = localCart;
-            }
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cartData) {
+                $ctrl.cart = cartData;
+
+            // $ctrl.cart = CheckoutService.cart;
+            // console.log($ctrl.cart)
         }
+            console.log($ctrl.cart)
+        }
+
 
         let update = () => {
             $scope.$evalAsync()
@@ -98,7 +102,11 @@
             }
             this.cart.push(newProduct)
             localStorage.setItem('localCart', JSON.stringify(this.cart));
-        }
+        },
+
+            this.checkout = () => {
+                console.log('checking out!')
+            }
     }
 
 } ());

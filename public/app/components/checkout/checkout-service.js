@@ -4,24 +4,30 @@ CartData.service('CheckoutService', function ($http) {
     // We will be saving all cart data to local storage. 
 
     var cs = this;
-    var cart = {};
+    cs.cart = [];
 
     cs.addToCart = (item) => {
-        cart[item.id] = item
+        cs.cart.push(item)
         cs.saveCart();
-        cs.getCart();
+        cs.cart = cs.getCart();
+        console.log(cs.cart )
 
     }
 
     cs.removeFromCart = (id) => {
-        cart[id] = null;
+        cs.cart.forEach(item=>{ 
+        if(id == item.id){
+            cs.cart.splice(item,1)
+        }
+        })
+        // cs.cart[id] = null;
         cs.saveCart();
         cs.getCart();
     }
 
 
     cs.saveCart = function () {
-        localStorage.setItem('cart', JSON.stringify(cart))
+        localStorage.setItem('cart', JSON.stringify(cs.cart))
         console.log('item saved to cart')
     }
 
@@ -29,10 +35,10 @@ CartData.service('CheckoutService', function ($http) {
         var cartData = localStorage.getItem('cart');
         if (cartData) {
             console.log(JSON.parse(cartData))
-            return JSON.parse(cartData)
-            
-        }
-            return [];
+            cs.cart = JSON.parse(cartData)
+            console.log(cs.cart)
+           return cs.cart
+    }
     }
 
     cs.checkout = function () {

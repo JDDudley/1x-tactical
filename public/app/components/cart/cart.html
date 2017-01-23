@@ -2,7 +2,7 @@
     <div class="col-xs-12">
         <h1>{{$ctrl.name}}</h1>
         <p>Items in cart: ({{$ctrl.cart.length}})</p>
-        <table class="table" ng-if="$ctrl.cart.length > 0">
+        <table class="table" ng-if="$ctrl.cart.length>0">
             <thead>
                 <tr>
                     <th>Product</th>
@@ -33,11 +33,15 @@
             </tfoot>
         </table>
     </div>
-    <div class="col-xs-12 text-center" ng-if="!$ctrl.user.email">
+
+<!--
+<div class="col-xs-12 text-center" ng-if="!$ctrl.user.email">
         <h2>Please Sign In to Continue Checkout</h2>
-    </div>
+    </div> -->
     <!--if logged in-->
-    <div class="col-xs-12 col-sm-6 col-lg-4" ng-if="$ctrl.user.email">
+
+
+    <div class="col-xs-12 col-sm-6 col-lg-4">
         <h4>User Information</h4>
         <form class="form-horizontal" id="join-form" action="http://1xtactical.com/api/payment/membership" method="POST">
             <div class="form-group" id="div-firstname">
@@ -203,7 +207,7 @@
                 <div class="col-xs-4 col-sm-3 col-md-4">&nbsp;
                 </div>
                 <div class="col-xs-8 col-sm-6 col-md-4">
-                    <button type="submit" class="btn btn-danger submit" id="submit-form" style="width: 75%;">Place Order</button>
+                    <button type="submit" class="btn btn-danger submit" id="submit-form" style="width: 75%;" ng-click="$ctrl.checkout()">Place Order</button>
                 </div>
             </div>
         </form>
