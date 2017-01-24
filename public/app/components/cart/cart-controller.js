@@ -79,13 +79,14 @@
         }
 
         this.removeProductFromCart = function (product) {
+            debugger 
             for (var i = 0; i < this.cart.length; i++) {
                 var productToDrop = this.cart[i];
                 if (productToDrop == product) {
                     this.cart.splice(i, 1)
                 }
             }
-            localStorage.setItem('localCart', JSON.stringify(this.cart))
+            localStorage.setItem('cart', JSON.stringify(this.cart))
             return this.cart
         }
 
