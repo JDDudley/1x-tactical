@@ -29,7 +29,6 @@
                 :
                 $http.post(storeUrl, productObj)
                     .success(function (data) {
-                        console.log(data)
                         data.error ?
                             alert("Could not add " + productObj.product.name + " to the Store. Make sure you are filling out all required fields. ")
                             :
@@ -52,11 +51,8 @@
                     "deleted": false
                 }
             }
-            console.log(eventObj)
-            console.log(eventObj.event.category)
             $http.post(eventUrl, eventObj)
                 .success(function (data) {
-                    console.log(data)
                     data.error ?
                         alert("could not add " + eventObj.event.name + " to the Event Page. Make sure all required fields are filled out.")
                         : alert("successfully posted the event " + eventObj.event.name + " to the event page")
@@ -76,7 +72,6 @@
                 "activeCode": true
                 // }
             }
-            console.log(discountObj)
             $http.post(discountUrl, discountObj)
                 .success(function (data) {
                     data.error ?
@@ -94,14 +89,12 @@
         // }
 
         as.deleteProduct = id => {
-            console.log(id)
             var deletedObj = {
                 "product":
                 {
                     "inStock": false
                 }
             }
-                console.log(deletedObj)
             $http.put(storeUrl +'/' + id, deletedObj)
         }
 

@@ -17,13 +17,11 @@
         ac.$onInit = function () {
             CartService.getAll(function (products) {
                 ac.allProducts = products;
-                console.log(ac.allProducts);
             })
         }
 
 
         ac.addItem = (product) => {
-            console.log(product)
             as.addProduct(product);
         }
 
@@ -38,7 +36,6 @@
         ac.putProduct = function (product) {
             //call a function in service to do PUT request
             debugger
-            console.log(product)
         }
 
 
@@ -47,7 +44,6 @@
             debugger
             ac.allProducts.data.forEach((product) => {
                 if (product.id == id) {
-                    console.log(product)
                     template =
                         ` <form ng-submit="ac.putProduct(ac.editedProduct)" >
                 <label>Product Name:</label>
@@ -81,11 +77,9 @@
         ac.deleteProduct = id => { 
             ac.allProducts.data.forEach((product) => {
                 if (id == product.id) {
-                    console.log({working: id})
         }
             })
             as.deleteProduct(id)
-            console.log("deleted")
         }
 
 
