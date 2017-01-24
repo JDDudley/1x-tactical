@@ -22,7 +22,7 @@
         }
 
         $ctrl.addToCart = function() {
-            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            var cartData = JSON.parse(localStorage.getItem('cart'));
             // var localCart = [];
             cartData.push({
                 name: '1 Year 1XTactical Membership',

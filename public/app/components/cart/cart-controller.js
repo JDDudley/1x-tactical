@@ -25,9 +25,9 @@
             if (cartData) {
                 $ctrl.cart = cartData;
 
-            // $ctrl.cart = CheckoutService.cart;
-            // console.log($ctrl.cart)
-        }
+                // $ctrl.cart = CheckoutService.cart;
+                // console.log($ctrl.cart)
+            }
             console.log($ctrl.cart)
         }
 
@@ -59,27 +59,35 @@
             }
             return sum
         }
-
+        //////////////////////////////////////////////////////////////////////////////////
         this.calculateMembers = function () {
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
+
                 var total = this.cart[i].memberPrice * this.cart[i].quantity;
+
+                if (!this.cart[i].memberPrice) {
+                    total = this.cart[i].price * this.cart[i].quantity
+                }
                 sum += total;
             }
             return sum
         }
+        //////////////////////////////////////////////////////////////////////
 
         this.calculateNonMembers = function () {
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
                 var total = this.cart[i].nonMemberPrice * this.cart[i].quantity;
+                if (!this.cart[i].nonMemberPrice) {
+                    total = this.cart[i].price * this.cart[i].quantity
+                }
                 sum += total;
             }
             return sum
         }
-
+        /////////////////////////////////////////////////////////////////////////////////
         this.removeProductFromCart = function (product) {
-            debugger 
             for (var i = 0; i < this.cart.length; i++) {
                 var productToDrop = this.cart[i];
                 if (productToDrop == product) {
