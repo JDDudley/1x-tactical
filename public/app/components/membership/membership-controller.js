@@ -22,16 +22,16 @@
         }
 
         $ctrl.addToCart = function() {
-            var localCart = JSON.parse(localStorage.getItem('localCart')) || [];
-            var localCart = [];
-            localCart.push({
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            // var localCart = [];
+            cartData.push({
                 name: '1 Year 1XTactical Membership',
                 quantity: 1,
-                msrp: 99.00,
-                memberPrice: 0,
+                // msrp: 99.00
+                memberPrice: 99.00,
                 nonMemberPrice: 99.00
             })
-            localStorage.setItem('localCart', JSON.stringify(localCart));
+            localStorage.setItem('cart', JSON.stringify(cartData));
             console.log('Added membership to cart.');
         }
 
