@@ -1,11 +1,12 @@
-let express = require('express')
-,bodyParser = require('body-parser')
-,cors = require('cors')
-,routes=require('./server-assets/routes/index')
-,handlers = require('./utils/handler')
-,server = express()
-,firebase = require('firebase')
-,port = process.env.PORT || 8080
+const express = require('express')
+  , stripe = require('stripe')('sk_test_0gxkIeR9ccLO0RFykXYplPT7')
+  , bodyParser = require('body-parser')
+  , cors = require('cors')
+  , routes = require('./server-assets/routes/index')
+  , handlers = require('./utils/handler')
+  , server = express()
+  , firebase = require('firebase')
+  , port = process.env.PORT || 8080
 
 
 
@@ -15,9 +16,30 @@ server.use('/', express.static(`${__dirname}/public`));
 server.use('/api', cors(handlers.corsOptions), routes.router)
 server.use('/', handlers.defaultErrorHandler)
 
-server.get('/', function(req, res){
+server.get('/', function (req, res) {
   res.sendfile('index.html');
 });
+
+server.get('/paysuccess', function (req, res) {
+  res.sendfile('paysuccess.html');
+});
+
+
+server.post('/charge', function (req, res) {
+  const token = req.body.stripeToken,
+    chargeAmount = req.body.chargeAmount,
+    charge = stripe.charge.create({
+      amount: chargeAmount,
+      currency: 'usd',
+      source: token
+    }, function (err, charge) {
+      if (err && err.type === "StripeCardError") {
+        console.log('Card was declined')
+      }
+    })
+  console.log('payment successful!')
+  res.redirect('/paysuccess')
+})
 
 
 

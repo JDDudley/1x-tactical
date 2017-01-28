@@ -42,6 +42,16 @@
     <!--if logged in-->
 
 
+
+
+
+
+
+
+
+    <!--
+
+
     <div class="col-xs-12 col-sm-6 col-lg-4" ng-if="$ctrl.user.email">
         <h4>User Information</h4>
         <form class="form-horizontal" id="join-form" action="http://1xtactical.com/api/payment/membership" method="POST">
@@ -74,11 +84,17 @@
                         <div class="col-xs-8 col-sm-6 col-md-4">
                             <input type="password" class="form-control" id="input-password2" placeholder="Re-Enter Password">
                         </div>
-                    </div>-->
+                    </div>
+                    
         </div>
+
+        -->
+
+<!--
         <div class="col-xs-12 col-sm-6 col-lg-4" ng-if="$ctrl.user.email">
             <h4>Billing Address</h4>
             <!-- address-line1 input-->
+            <!--
             <div class="form-group" id="div-address1">
                 <label class="col-xs-4 col-sm-3 col-md-4 control-label">Address 1</label>
                 <div class="col-xs-8 col-sm-9 col-md-8">
@@ -86,6 +102,7 @@
                 </div>
             </div>
             <!-- address-line2 input-->
+            <!--
             <div class="form-group" id="div-address2">
                 <label class="col-xs-4 col-sm-3 col-md-4 control-label">Address 2</label>
                 <div class="col-xs-8 col-sm-9 col-md-8">
@@ -93,6 +110,7 @@
                 </div>
             </div>
             <!-- city input-->
+            <!--
             <div class="form-group" id="div-city">
                 <label class="col-xs-4 col-sm-3 col-md-4 control-label">City</label>
                 <div class="col-xs-8 col-sm-9 col-md-8">
@@ -100,6 +118,7 @@
                 </div>
             </div>
             <!-- region input-->
+            <!--
             <div class="form-group" id="div-state">
                 <label class="col-xs-4 col-sm-3 col-md-4 control-label">State</label>
                 <div class="col-xs-8 col-sm-9 col-md-8">
@@ -162,6 +181,7 @@
             </div>
             <div class="form-group" id="div-zip">
                 <!-- postal-code input-->
+                <!--
                 <label class="col-xs-4 col-sm-3 col-md-4 control-label">Zip Code</label>
                 <div class="col-xs-8 col-sm-9 col-md-8">
                     <input type="text" class="form-control" id="input-zipcode" data-stripe="address_zip" placeholder="Zip or Postal Code">
@@ -176,6 +196,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-lg-4" ng-if="$ctrl.user.email">
             <!--Credit Card-->
+            <!--
             <h4>Payment Information</h4>
             <!--<div class="form-group" id="div-cc-name">
                         <label class="col-xs-4 col-sm-3 col-md-4 control-label" for="input-cardname">Name on Card</label>
@@ -183,6 +204,7 @@
                             <input type="text" class="form-control" id="input-cardname" placeholder="Card Holder's Name">
                         </div>
                     </div>-->
+                    <!--
             <div class="form-group" id="div-cc">
                 <label class="col-xs-4 col-sm-3 col-md-4 control-label">Card Number</label>
                 <div class="col-xs-8 col-sm-9 col-md-8">
@@ -215,3 +237,16 @@
 
     </div>
 </div>
+
+-->
+<form action="/charge" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_cUjpzeKJ4m81pgLcYEaix3zv"
+    data-amount="999"
+    data-name="Demo Site"
+    data-description="Widget"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto">
+  </script>
+</form>
