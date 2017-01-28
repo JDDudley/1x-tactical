@@ -262,11 +262,12 @@
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_cUjpzeKJ4m81pgLcYEaix3zv"
-    data-amount="{{$ctrl.calculateNonMembers() *100}}"
-    data-currency="usd"
+    data-amount="555"
     data-name="Demo Site"
     data-description="Widget"
     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-    data-locale="auto">
+    data-locale="auto"
+    data-currency="usd">
   </script>
+  <input type="hidden" name="chargeAmount" value="555">
 </form>

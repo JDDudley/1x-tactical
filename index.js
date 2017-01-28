@@ -26,21 +26,20 @@ server.get('/paysuccess', function (req, res) {
 
 
 server.post('/charge', function (req, res) {
-  const token = req.body.stripeToken,
-    chargeAmount = req.body.amount,
-    charge = stripe.charges.create({
-      amount: 55,
-      currency: 'usd',
-      source: token
-    }, function (err, charge) {
-      if (err && err.type === "StripeCardError") {
-        console.log('Card was declined')
-      }
-    })
+  const token = req.body.stripeToken;
+  const chargeAmount = req.body.chargeAmount;
+  const charge = stripe.charges.create({
+    amount: chargeAmount,
+    currency: 'usd',
+    source: token
+  }, function (err, charge) {
+    if (err && err.type === "StripeCardError") {
+      console.log('Card was declined')
+    }
+  })
   console.log('payment successful!')
   res.redirect('/paysuccess')
 })
-
 
 
 server.listen(port, function () {
