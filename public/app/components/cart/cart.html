@@ -15,11 +15,27 @@
                 <tr ng-repeat="product in $ctrl.cart">
                     <td>{{product.name}}</td>
                     <td>
+
+    <select  ng-model="product.quantity" style="color:black"ng-init="product.quantity=1" >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+
                         <!--<input type="number" value="quantity" class="cart-quantity">-->
-                        <select ng-model="product.quantity" ng-options="o as o for o in [1,2,3,4,5,6,7,8,9,10]" ng-init="product.quantity =1" style="color:black"></select>
+                        <!--<select ng-model="quantity" ng-options="o as o for o in [1,2,3,4,5,6,7,8,9,10]"  style="color:black"></select>-->
+                        <!--ng-init="product.quantity =1"-->
                     </td>
-                    <td>{{product.memberPrice  *product.quantity ||product.price*product.quantity | currency}}</td>
-                    <td>{{product.nonMemberPrice *product.quantity ||product.price*product.quantity | currency}}<button class="btn btn-xs btn-warning pull-right"
+                    <td name="member-total">{{product.memberPrice  * product.quantity ||product.price* product.quantity | currency}}</td>
+                    <td name="non-member-total">{{product.nonMemberPrice * product.quantity ||product.price* product.quantity | currency}}<button class="btn btn-xs btn-warning pull-right"
                             ng-click="$ctrl.removeProductFromCart(product)">X</button></td>
                 </tr>
             </tbody>
@@ -239,11 +255,15 @@
 </div>
 
 -->
+
+
+
 <form action="/charge" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_cUjpzeKJ4m81pgLcYEaix3zv"
-    data-amount="999"
+    data-amount="{{$ctrl.calculateNonMembers() *100}}"
+    data-currency="usd"
     data-name="Demo Site"
     data-description="Widget"
     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

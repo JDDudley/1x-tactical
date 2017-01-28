@@ -17,19 +17,19 @@ server.use('/api', cors(handlers.corsOptions), routes.router)
 server.use('/', handlers.defaultErrorHandler)
 
 server.get('/', function (req, res) {
-  res.sendfile('index.html');
+  res.sendFile('index.html');
 });
 
 server.get('/paysuccess', function (req, res) {
-  res.sendfile('paysuccess.html');
+  res.sendFile(`${__dirname}/public/paysuccess.html`);
 });
 
 
 server.post('/charge', function (req, res) {
   const token = req.body.stripeToken,
-    chargeAmount = req.body.chargeAmount,
-    charge = stripe.charge.create({
-      amount: chargeAmount,
+    chargeAmount = req.body.amount,
+    charge = stripe.charges.create({
+      amount: 55,
       currency: 'usd',
       source: token
     }, function (err, charge) {
