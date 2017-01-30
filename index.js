@@ -21,21 +21,19 @@ server.get('/', function (req, res) {
 });
 
 server.get('/paysuccess', function (req, res) {
-  res.render('payscuccess', {
-})
-})
+  res.sendFile(`${__dirname}/public/paysuccess.html`);
+});
 
 
 server.post('/charge', function (req, res) {
   const token = req.body.stripeToken;
-  const amount = req.body.chargeAmount;
+  const chargeAmount = req.body.chargeAmount;
   const charge = stripe.charges.create({
-    amount:amount,
+    amount: chargeAmount,
     currency: 'usd',
     source: token
   }, function (err, charge) {
-    if (err) {
-    //  && err.type === "StripeCardError"
+    if (err && err.type === "StripeCardError") {
       console.log('Card was declined')
     }
   })
@@ -45,5 +43,5 @@ server.post('/charge', function (req, res) {
 
 
 server.listen(port, function () {
-  console.log(`Server is on port: ${port}`)
+  console.log(`Server is on port: ${port}`);
 })

@@ -10,7 +10,8 @@
 
     function CartController(CartService, AuthService, $scope, CheckoutService) {
         var $ctrl = this;
-        $ctrl.options=[1,2,3,4,5,6,7,8,9,10]; 
+        $ctrl.options=[1,2,3,4,5,6,7,8,9,10]
+        $ctrl.quantity =1;
 
         // GET LOGGED IN USER INFO
         let updateUser = (user) => {
@@ -55,7 +56,7 @@
         this.calculateMsrp = function () {
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
-                var total = this.cart[i].msrp * this.cart[i].quantity;
+                var total = this.cart[i].msrp * $ctrl.quantity;
                 sum += total;
             }
             return sum
@@ -65,10 +66,10 @@
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
 
-                var total = this.cart[i].memberPrice * this.cart[i].quantity;
+                var total = this.cart[i].memberPrice * $ctrl.quantity;
 
                 if (!this.cart[i].memberPrice) {
-                    total = this.cart[i].price * this.cart[i].quantity
+                    total = this.cart[i].price * $ctrl.quantity
                 }
                 sum += total;
             }
@@ -79,9 +80,9 @@
         this.calculateNonMembers = function () {
             var sum = 0;
             for (var i = 0; i < this.cart.length; i++) {
-                var total = this.cart[i].nonMemberPrice * this.cart[i].quantity;
+                var total = this.cart[i].nonMemberPrice * $ctrl.quantity;
                 if (!this.cart[i].nonMemberPrice) {
-                    total = this.cart[i].price * this.cart[i].quantity
+                    total = this.cart[i].price * $ctrl.quantity
                 }
                 sum += total;
             }

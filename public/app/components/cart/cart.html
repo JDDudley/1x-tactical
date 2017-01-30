@@ -15,11 +15,11 @@
                 <tr ng-repeat="product in $ctrl.cart">
                     <td>{{product.name}}</td>
                     <td>
-                        <select ng-model="product.quantity" ng-options="o for o in $ctrl.options" ng-init="product.quantity = $ctrl.options[0]">
+                        <select ng-model="$ctrl.quantity" ng-options="o for o in $ctrl.options">
                         </select>
 </td>
-<td name="member-total">{{product.memberPrice * product.quantity ||product.price* product.quantity | currency}}</td>
-<td name="non-member-total">{{product.nonMemberPrice * product.quantity ||product.price* product.quantity | currency}}<button class="btn btn-xs btn-warning pull-right"
+<td name="member-total">{{product.memberPrice * $ctrl.quantity ||product.price* $ctrl.quantity | currency}}</td>
+<td name="non-member-total">{{product.nonMemberPrice * $ctrl.quantity ||product.price* $ctrl.quantity | currency}}<button class="btn btn-xs btn-warning pull-right"
         ng-click="$ctrl.removeProductFromCart(product)">X</button></td>
 </tr>
 </tbody>
@@ -32,7 +32,9 @@
         <td>{{$ctrl.calculateNonMembers() | currency}}</td>
     </tr>
 
-
+    <script>
+    $ctrl.calculateNonMembers()
+    </script>
     <!--FORM TO MAKE POST REQUEST TO STRIPE-->
     <tr>
         <form action="/charge" method="POST">
@@ -44,7 +46,9 @@
                 data-description="Arm Up Train Up Stand Up" 
                 data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                 data-locale="auto" 
-                data-currency="usd">
+                data-currency="usd"
+                data-shipping-address="true"
+                >
                 </script>
 <input type="hidden" name="chargeAmount" value="{{$ctrl.calculateNonMembers() *100}}">
 </form>
