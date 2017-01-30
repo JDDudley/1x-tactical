@@ -10,6 +10,7 @@
 
     function CartController(CartService, AuthService, $scope, CheckoutService) {
         var $ctrl = this;
+        $ctrl.options=[1,2,3,4,5,6,7,8,9,10]; 
 
         // GET LOGGED IN USER INFO
         let updateUser = (user) => {
