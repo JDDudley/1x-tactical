@@ -27,7 +27,8 @@ server.get('/paysuccess', function (req, res) {
 
 server.post('/charge', function (req, res) {
   const token = req.body.stripeToken;
-  const chargeAmount = req.body.chargeAmount;
+  console.log(token)
+  const chargeAmount = req.body.chargeAmount
   const charge = stripe.charges.create({
     amount: chargeAmount,
     currency: 'usd',
